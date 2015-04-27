@@ -1,0 +1,94 @@
+<!-- Edit this file to change the layout of the detail view print preview page -->
+
+
+<div class="panel-heading"><h3 class="panel-title">
+	<strong><%%DETAIL_VIEW_TITLE%%></strong>
+	<div class="hidden-print pull-right">
+		<button type="button" id="print" onclick="window.print();" title="<%%TRANSLATION(Print)%%>" class="btn btn-success"><i class="glyphicon glyphicon-print"></i></button>
+		<button type="submit" id="back" title="<%%TRANSLATION(Back)%%>" class="btn btn-warning"><i class="glyphicon glyphicon-remove"></i></button>
+	</div>
+	<div class="clearfix"></div>
+</h3></div>
+
+<div class="panel-body">
+	<fieldset class="form-horizontal">
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Storyline no.</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><%%VALUE(id)%%></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Story</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><span id="story<%%RND1%%>"><%%COMBOTEXT(story)%%></span></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Act/Chapter</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><%%COMBOTEXT(story_act)%%></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Storyweaving scene no.</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><span id="storyweaving_scene_no<%%RND1%%>"><%%COMBOTEXT(storyweaving_scene_no)%%></span></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Storyweaving scene</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><span id="storyweaving_scene<%%RND1%%>"></span></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Sequence</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><span id="storyweaving_sequence<%%RND1%%>"></span></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Theme</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><span id="storyweaving_theme<%%RND1%%>"></span></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Role</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><span id="role<%%RND1%%>"><%%COMBOTEXT(role)%%></span></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Character</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><span id="character<%%RND1%%>"><%%COMBOTEXT(character)%%></span></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Encounter</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><span id="characterevent_scene<%%RND1%%>"><%%COMBOTEXT(characterevent_scene)%%></span></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Character scene</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><span id="character_event<%%RND1%%>"></span></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Scene no.</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><%%VALUE(storyline_no)%%></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Storyline</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><%%VALUE(storyline)%%></p>
+			</div>
+		</div>
+	</fieldset>
+</div>

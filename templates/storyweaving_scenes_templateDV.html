@@ -1,0 +1,172 @@
+<!-- Edit this file to change the layout of the detail view form -->
+
+<a name="detail-view"></a>
+<div class="panel-heading"><h3 class="panel-title"><strong><%%DETAIL_VIEW_TITLE%%></strong></h3></div>
+
+<div class="panel-body" id="storyweaving_scenes_dv_container">
+	<!-- child links -->
+	<div class="row">
+		<div class="col-xs-12">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="storylines_view.php?filterer_storyweaving_scene_no=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>" id="storylines_link"><i class="glyphicon glyphicon-list-alt"></i> Storylines</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="storylines_view.php?filterer_storyweaving_scene_no=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>" id="xs_storylines_link"><i class="glyphicon glyphicon-list-alt"></i> Storylines</a>
+			<input type="hidden" id="storylines_hclink" value="storylines_view.php?filterer_storyweaving_scene_no=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>">
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<hr>
+
+	<div class="row">
+		<!-- form inputs -->
+		<div class="col-md-8 col-lg-10" id="storyweaving_scenes_dv_form">
+			<fieldset class="form-horizontal">
+
+				<div class="form-group">
+					<label for="id" class="control-label col-lg-3">id <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#id-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="id-description"><div class="alert alert-info">By encoding this table you are defining the structural story grid of your story.<br>This table referes to the storyweaving scenes definded by Dramatica theory.<br>Chose the free Dramatica worksheets or the commercial Dramatica Pro software to encode them.</div></span>
+
+						<p class="form-control-static" id="id"><%%VALUE(id)%%></p>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="story" class="control-label col-lg-3">Story</label>
+					<div class="col-lg-9">
+						<div class="row"><div class="col-xs-10"><%%COMBO(story)%%></div><div class="col-xs-1"><%%PLINK(story)%%></div></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="step" class="control-label col-lg-3">Step <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#step-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="step-description"><div class="alert alert-info">This referes to the vertical orientation on the structural grid.</div></span>
+
+						<%%COMBO(step)%%>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="throughline" class="control-label col-lg-3">Throughline <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#throughline-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="throughline-description"><div class="alert alert-info">This refers to the horizontal orientation on the grid.</div></span>
+
+						<div class="row"><div class="col-xs-10"><%%COMBO(throughline)%%></div><div class="col-xs-1"><%%PLINK(throughline)%%></div></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="domain" class="control-label col-lg-3">Domain</label>
+					<div class="col-lg-9">
+						<div class="row"><div class="col-xs-10"><%%COMBO(domain)%%></div><div class="col-xs-1"><%%PLINK(domain)%%></div></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="concern" class="control-label col-lg-3">Concern</label>
+					<div class="col-lg-9">
+						<div class="row"><div class="col-xs-10"><%%COMBO(concern)%%></div><div class="col-xs-1"><%%PLINK(concern)%%></div></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="sequence" class="control-label col-lg-3">Sequence</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="sequence" id="sequence" value="<%%VALUE(sequence)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="issue" class="control-label col-lg-3">Issue <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#issue-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="issue-description"><div class="alert alert-info">Issue and theme are not independent from the throughline domain.<br>Since they have not been programmed as a calculated function here, please,<br>use the free Dramatica worksheets or the commercial software Dramatica Pro to encode them correctly.</div></span>
+
+						<div class="row"><div class="col-xs-10"><%%COMBO(issue)%%></div><div class="col-xs-1"><%%PLINK(issue)%%></div></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="theme" class="control-label col-lg-3">Theme</label>
+					<div class="col-lg-9">
+						<div class="row"><div class="col-xs-10"><%%COMBO(theme)%%></div><div class="col-xs-1"><%%PLINK(theme)%%></div></div>
+					</div>
+				</div>
+
+			</fieldset>
+		</div>
+
+		<!-- DV action buttons -->
+		<div class="col-md-4 col-lg-2" id="storyweaving_scenes_dv_action_buttons">
+			<div class="btn-toolbar">
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%UPDATE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%DESELECT_BUTTON%%>
+					<%%DVPRINT_BUTTON%%>
+					<%%DELETE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%INSERT_BUTTON%%>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- child records -->
+	<hr>
+	<div class="row">
+		<div class="col-lg-10 col-lg-offset-1">
+			<div id="storyweaving_scenes-children" class="children-tabs"></div>
+		</div>
+	</div>
+
+</div><!-- /div class="panel-body" -->
+	<script>
+		$j(function() {
+			var add_new_mode = (!$j('input[name=SelectedID]').val());
+			var embedded_mode = ($j('input[name=Embedded]').val() == 1);
+
+			$j('select, input[type=text], textarea').not(':disabled').eq(0).focus();
+			$j('form').eq(0).change(function(){
+				if($j(this).data('already_changed')) return;
+				if($j('#deselect').length) $j('#deselect').removeClass('btn-default').addClass('btn-warning').get(0).lastChild.data = " <%%TRANSLATION(Cancel)%%>";
+				$j(this).data('already_changed', true);
+			});
+
+			$j('a[href="<%%TRANSLATION(ImageFolder)%%>"]').click(function(){ return false; });
+
+			if(embedded_mode){
+				/* hide links to children tables in embedded mode */
+				$j('.detail_view a[id$=_link]').remove();
+
+				/* append embedded mode to all links */
+				var append_embedded = function(){
+					$j('a[href]:not([href^=#]):not([href^=javascript]):not([href$="Embedded=1"])').each(
+						function(){
+							$j(this).attr('href', $j(this).attr('href') + '&Embedded=1');
+						}
+					);
+				}
+				setTimeout(append_embedded, 500);
+				setTimeout(append_embedded, 1500);
+				setTimeout(append_embedded, 2500);
+				setTimeout(append_embedded, 3500);
+			}
+
+			/* when no record is selected ('add new' mode) */
+			if(add_new_mode){
+				/* hide links to children tables */
+				$j('.detail_view a[id$=_link]').remove();
+			}else{
+				post(
+					'parent-children.php', {
+						ParentTable: 'storyweaving_scenes',
+						SelectedID: '<%%VALUE(id)%%>',
+						Operation: 'show-children'
+					},
+					'storyweaving_scenes-children'
+				);
+			}
+		});
+	</script>

@@ -1,0 +1,79 @@
+<!-- Edit this file to change the layout of the detail view form -->
+
+<a name="detail-view"></a>
+<div class="panel-heading"><h3 class="panel-title"><strong><%%DETAIL_VIEW_TITLE%%></strong></h3></div>
+
+<div class="panel-body" id="dictionary_dv_container">
+	<!-- child links -->
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<hr>
+
+	<div class="row">
+		<!-- form inputs -->
+		<div class="col-md-8 col-lg-10" id="dictionary_dv_form">
+			<fieldset class="form-horizontal">
+
+				<div class="form-group">
+					<label for="id" class="control-label col-lg-3">id</label>
+					<div class="col-lg-9">
+						<p class="form-control-static" id="id"><%%VALUE(id)%%></p>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="term" class="control-label col-lg-3">term</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="term" id="term" value="<%%VALUE(term)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="definition" class="control-label col-lg-3">definition</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="definition" id="definition" value="<%%VALUE(definition)%%>">
+					</div>
+				</div>
+
+			</fieldset>
+		</div>
+
+		<!-- DV action buttons -->
+		<div class="col-md-4 col-lg-2" id="dictionary_dv_action_buttons">
+			<div class="btn-toolbar">
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%UPDATE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%DESELECT_BUTTON%%>
+					<%%DVPRINT_BUTTON%%>
+					<%%DELETE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%INSERT_BUTTON%%>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</div><!-- /div class="panel-body" -->
+	<script>
+		$j(function() {
+			var add_new_mode = (!$j('input[name=SelectedID]').val());
+			var embedded_mode = ($j('input[name=Embedded]').val() == 1);
+
+			$j('select, input[type=text], textarea').not(':disabled').eq(0).focus();
+			$j('form').eq(0).change(function(){
+				if($j(this).data('already_changed')) return;
+				if($j('#deselect').length) $j('#deselect').removeClass('btn-default').addClass('btn-warning').get(0).lastChild.data = " <%%TRANSLATION(Cancel)%%>";
+				$j(this).data('already_changed', true);
+			});
+
+			$j('a[href="<%%TRANSLATION(ImageFolder)%%>"]').click(function(){ return false; });
+
+		});
+	</script>

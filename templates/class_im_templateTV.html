@@ -1,0 +1,11 @@
+<!-- Edit this file to change the layout of each record in the table view -->
+<!-- To disable clicking of a field, remove the <%%select%%> and <%%endselect%%> formatters around it-->
+
+<!-- If you wish to hide the table view header that contains the column titles, -->
+<!-- open the generated 'class_im_view.php' file in your text editor and -->
+<!-- change the value of $x->ShowTableHeader to 0 -->
+
+		<td id="class_im-id-<%%VALUE(id)%%>" class="class_im-id text-right"><%%SELECT%%><%%VALUE(id)%%><%%ENDSELECT%%></td>
+		<td id="class_im-impression-<%%VALUE(id)%%>" class="class_im-impression "><%%SELECT%%><%%VALUE(impression)%%><%%ENDSELECT%%></td>
+		<td id="class_im-description-<%%VALUE(id)%%>" class="class_im-description "><%%SELECT%%><%%VALUE(description)%%><%%ENDSELECT%%></td>
+		<td id="class_im-category-<%%VALUE(id)%%>" class="class_im-category "><%%SELECT%%><%%VALUE(category)%%><%%ENDSELECT%%></td>

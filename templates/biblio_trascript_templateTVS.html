@@ -1,0 +1,11 @@
+<!-- Edit this file to change the layout of the highlighted record in the table view -->
+		<td id="biblio_trascript-author-<%%VALUE(id)%%>" class=""><%%VALUE(author)%%></td>
+		<td id="biblio_trascript-author_memberID-<%%VALUE(id)%%>" class=""><%%VALUE(author_memberID)%%></td>
+		<td id="biblio_trascript-bibliography_id-<%%VALUE(id)%%>" class=""><%%VALUE(bibliography_id)%%></td>
+		<td id="biblio_trascript-bibliography_title-<%%VALUE(id)%%>" class=""><%%VALUE(bibliography_title)%%></td>
+		<td id="biblio_trascript-trascriber_memberID-<%%VALUE(id)%%>" class=""><%%VALUE(trascriber_memberID)%%></td>
+		<td id="biblio_trascript-transcript_title-<%%VALUE(id)%%>" class=""><%%VALUE(transcript_title)%%></td>
+		<td id="biblio_trascript-transcript-<%%VALUE(id)%%>" class=""><a href="link.php?t=biblio_trascript&f=transcript&i=<%%VALUE(id)%%>" target="_blank" title="<%%VALUE(transcript)%%>" class="btn btn-default"><i class="glyphicon glyphicon-globe text-info"></i></a></td>
+		<td id="biblio_trascript-credits-<%%VALUE(id)%%>" class=""><a href="link.php?t=biblio_trascript&f=credits&i=<%%VALUE(id)%%>" target="_blank" title="<%%VALUE(credits)%%>" class="btn btn-default"><i class="glyphicon glyphicon-globe text-info"></i></a></td>
+		<script>jQuery(function(){ var e_transcript = '<%%VALUE(transcript)%%>'; if(e_transcript == '' || e_transcript == '&nbsp;') jQuery('#biblio_trascript-transcript-<%%VALUE(id)%%>').html(''); });</script>
+		<script>jQuery(function(){ var e_credits = '<%%VALUE(credits)%%>'; if(e_credits == '' || e_credits == '&nbsp;') jQuery('#biblio_trascript-credits-<%%VALUE(id)%%>').html(''); });</script>

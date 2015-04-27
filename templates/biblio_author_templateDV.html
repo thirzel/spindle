@@ -1,0 +1,312 @@
+<!-- Edit this file to change the layout of the detail view form -->
+
+<a name="detail-view"></a>
+<div class="panel-heading"><h3 class="panel-title"><strong><%%DETAIL_VIEW_TITLE%%></strong></h3></div>
+
+<div class="panel-body" id="biblio_author_dv_container">
+	<!-- child links -->
+	<div class="row">
+		<div class="col-xs-12">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="biblio_doc_view.php?filterer_author_name=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>" id="biblio_doc_link"><i class="glyphicon glyphicon-list-alt"></i> Bibliography</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="biblio_doc_view.php?filterer_author_name=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>" id="xs_biblio_doc_link"><i class="glyphicon glyphicon-list-alt"></i> Bibliography</a>
+			<input type="hidden" id="biblio_doc_hclink" value="biblio_doc_view.php?filterer_author_name=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>">
+			<input type="hidden" id="biblio_trascript_hclink" value="biblio_trascript_view.php?filterer_author=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>">
+			<input type="hidden" id="biblio_token_hclink" value="biblio_token_view.php?filterer_author=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>">
+			<input type="hidden" id="code_invivo_hclink" value="code_invivo_view.php?filterer_author=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>">
+			<input type="hidden" id="code_herme_hclink" value="code_herme_view.php?filterer_author=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="code_chrev_scenes_view.php?filterer_author=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>" id="code_chrev_scenes_link"><i class="glyphicon glyphicon-list-alt"></i> Character scenes</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="code_chrev_scenes_view.php?filterer_author=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>" id="xs_code_chrev_scenes_link"><i class="glyphicon glyphicon-list-alt"></i> Character scenes</a>
+			<input type="hidden" id="code_chrev_scenes_hclink" value="code_chrev_scenes_view.php?filterer_author=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="code_character_development_view.php?filterer_author=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>" id="code_character_development_link"><i class="glyphicon glyphicon-list-alt"></i> Character dev.</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="code_character_development_view.php?filterer_author=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>" id="xs_code_character_development_link"><i class="glyphicon glyphicon-list-alt"></i> Character dev.</a>
+			<input type="hidden" id="code_character_development_hclink" value="code_character_development_view.php?filterer_author=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="code_encounters_view.php?filterer_agentA=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>" id="code_encounters_link"><i class="glyphicon glyphicon-list-alt"></i> Encounters</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="code_encounters_view.php?filterer_agentA=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>" id="xs_code_encounters_link"><i class="glyphicon glyphicon-list-alt"></i> Encounters</a>
+			<input type="hidden" id="code_encounters_hclink" value="code_encounters_view.php?filterer_agentA=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>">
+			<input type="hidden" id="story_characters_hclink" value="story_characters_view.php?filterer_agent_name=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>">
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<hr>
+
+	<div class="row">
+		<!-- form inputs -->
+		<div class="col-md-8 col-lg-10" id="biblio_author_dv_form">
+			<fieldset class="form-horizontal">
+
+				<div class="form-group">
+					<label for="id" class="control-label col-lg-3">ID</label>
+					<div class="col-lg-9">
+						<p class="form-control-static" id="id"><%%VALUE(id)%%></p>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="memberID" class="control-label col-lg-3">MemberID <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#memberID-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="memberID-description"><div class="alert alert-info">This is code must be identical with the "membership user's id".</div></span>
+
+						<input maxlength="40" type="text" class="form-control" name="memberID" id="memberID" value="<%%VALUE(memberID)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="img" class="control-label col-lg-3">Img <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#img-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="img-description"><div class="alert alert-info">Maximum file size allowed: 900 KB.<br>Allowed file types: jpg, jpeg, gif, png</div></span>
+
+						<div class="row"><div class="col-md-8">
+
+						<a href="<%%TRANSLATION(ImageFolder)%%><%%VALUE(img)%%>" rel="lightbox[biblio_author_dv]"><img src="thumbnail.php?i=<%%VALUE(img)%%>&t=biblio_author&f=img&v=dv" class="img-thumbnail"></a>
+</div>
+
+												<div class="col-md-4">
+							<%%UPLOADFILE(img)%%>
+							<%%REMOVEFILE(img)%%>
+						</div>
+					</div>
+
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="groupID" class="control-label col-lg-3">GroupID <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#groupID-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="groupID-description"><div class="alert alert-info">Use the same group number as in the "membership user groups".<br><br>1: Anonymous<br>2: Admins<br>3: Ancestors<br>4: Players</div></span>
+
+						<input maxlength="40" type="text" class="form-control" name="groupID" id="groupID" value="<%%VALUE(groupID)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="selection_class" class="control-label col-lg-3">Selection phase <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#selection_class-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="selection_class-description"><div class="alert alert-info">The number here refers to specific selection strategies within the collection and selection phase of the research "Principles of Liberty".<br>1: Conventional historiographic selection<br>2: Gender sensitive selection<br>3: Critical historiographic selection<br>4: Purposeful sample selection<br>5: Cohort sampling in research "Principles of Liberty"<br>6: Samples provided by Regine Schindler (2007)<br>7: Samples provided by Karl Fehr (1980)<br>8: New samples collected in the context of this networked narrative game</div></span>
+
+						<input maxlength="40" type="text" class="form-control" name="selection_class" id="selection_class" value="<%%VALUE(selection_class)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="agenttype1" class="control-label col-lg-3">Agent category <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#agenttype1-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="agenttype1-description"><div class="alert alert-info">This category refers to the MulDiCat RDF lables for "agents".<br>Based on the game theory, in here, only "persons" can become characters.<br>Nevertheless, data collection cannot always be associated to single persons, <br>therefore the option for "group", e.g. a research group, and "automaton", e.g. for example a data crawler like Google, <br>are also given here.</div></span>
+
+						<div class="row"><div class="col-xs-10"><%%COMBO(agenttype1)%%></div><div class="col-xs-1"><%%PLINK(agenttype1)%%></div></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="agenttype2" class="control-label col-lg-3">Agent group <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#agenttype2-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="agenttype2-description"><div class="alert alert-info">These groups are only relevant in relation to the research "Principles of Liberty".<br>1: a "sample" is a person who was selected for the further research study (not relevant for the game here).<br>2: a "contemporary" is a person who was not selected but lived during the same time period; the long 19th Century.<br>3: a "historiographer" is considered a recognized chronist or history writer.<br>4: a "biographer" is anybody else writing about relevant history or biography.<br>5: a historical person is anybody related to the history analyzed, independent of space, time or role he or she played.<br>6: persons who had been found in text without clear categorization.</div></span>
+
+						<div class="row"><div class="col-xs-10"><%%COMBO(agenttype2)%%></div><div class="col-xs-1"><%%PLINK(agenttype2)%%></div></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="gender" class="control-label col-lg-3">Gender <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#gender-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="gender-description"><div class="alert alert-info">Mark here the biological sex of the person, if known.<br><br>m: male<br>f: female<br>i: intersex</div></span>
+
+						<%%COMBO(gender)%%>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="last_name" class="control-label col-lg-3">Last name <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#last_name-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="last_name-description"><div class="alert alert-info">Write here the most common version of the full family name of the person.</div></span>
+
+						<input maxlength="40" type="text" class="form-control" name="last_name" id="last_name" value="<%%VALUE(last_name)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="first_name" class="control-label col-lg-3">First name <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#first_name-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="first_name-description"><div class="alert alert-info">Write here the most common version of the full family name of the person.</div></span>
+
+						<input maxlength="40" type="text" class="form-control" name="first_name" id="first_name" value="<%%VALUE(first_name)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="other_name" class="control-label col-lg-3">Other name(s) <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#other_name-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="other_name-description"><div class="alert alert-info">Write any kind of name variations, additional names and nicknames here.</div></span>
+
+						<input maxlength="40" type="text" class="form-control" name="other_name" id="other_name" value="<%%VALUE(other_name)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="birthday" class="control-label col-lg-3">Date of birth <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#birthday-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="birthday-description"><div class="alert alert-info">If the day of birth is uncertain or an approximation write it here anyway.<br>In this case, please mark "none" in the field "data evaluation", further down here.<br><br>Format: YYYY-MM-DD hh:mm:ss</div></span>
+
+						<input maxlength="" type="text" class="form-control" name="birthday" id="birthday" value="<%%VALUE(birthday)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="birth_location" class="control-label col-lg-3">Place of birth <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#birth_location-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="birth_location-description"><div class="alert alert-info">Only fill out if known.</div></span>
+
+						<input maxlength="40" type="text" class="form-control" name="birth_location" id="birth_location" value="<%%VALUE(birth_location)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="deathday" class="control-label col-lg-3">Date of death <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#deathday-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="deathday-description"><div class="alert alert-info">If the day of death is uncertain or an approximation write it here anyway.<br>In this case, please mark "none" in the field "data evaluation", further down here.<br><br>Format: YYYY-MM-DD hh:mm:ss</div></span>
+
+						<input maxlength="" type="text" class="form-control" name="deathday" id="deathday" value="<%%VALUE(deathday)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="death_location" class="control-label col-lg-3">Place of death <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#death_location-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="death_location-description"><div class="alert alert-info">If the day of death is uncertain or an approximation write it here anyway.<br>In this case, please mark "none" in the field "data evaluation", further down here.</div></span>
+
+						<input maxlength="40" type="text" class="form-control" name="death_location" id="death_location" value="<%%VALUE(death_location)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="workplace" class="control-label col-lg-3">Place of action <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#workplace-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="workplace-description"><div class="alert alert-info">Write here the main location of a person's field of action.<br>This field coincides with the MulDiCat RDF lable for "workplace".<br>If the location of birth or date is uncertain, its approximation can be included here.</div></span>
+
+						<input maxlength="40" type="text" class="form-control" name="workplace" id="workplace" value="<%%VALUE(workplace)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="knows" class="control-label col-lg-3">Related person(s) <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#knows-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="knows-description"><div class="alert alert-info">Write here the main location of a person's field of action.<br>This field coincides with the MulDiCat RDF lable for "workplace".<br>If the location of birth or date is uncertain, its approximation can be included here.</div></span>
+
+						<input maxlength="40" type="text" class="form-control" name="knows" id="knows" value="<%%VALUE(knows)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="shortbio" class="control-label col-lg-3">Short biography <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#shortbio-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="shortbio-description"><div class="alert alert-info">This is a very reduced introduction to the person's life,<br>usually taken from an official repository or archive.</div></span>
+
+						<textarea class="form-control" name="shortbio" id="shortbio" rows="5"><%%VALUE(shortbio)%%></textarea>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="data_evaluation" class="control-label col-lg-3">Data evaluation <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#data_evaluation-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="data_evaluation-description"><div class="alert alert-info">If some data are still uncertain mark "none".<br>Otherwise indicate who gives credit for the data validation.<br>If you checked the data with other data it's "self-evaluation".<br>If you are revising the agent's data introduced by someone else, mark "peer review",<br>If an authority control number exists, mark authority control, <br>but only in the case all data are confirmed by this institution.</div></span>
+
+						<%%COMBO(data_evaluation)%%>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="authority_record" class="control-label col-lg-3">Authority record <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#authority_record-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="authority_record-description"><div class="alert alert-info">The authority number.</div></span>
+
+						<input maxlength="255" type="text" class="form-control" name="authority_record" id="authority_record" value="<%%VALUE(authority_record)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="authority_organization" class="control-label col-lg-3">Authority organization <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#authority_organization-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="authority_organization-description"><div class="alert alert-info">Chose the authority organization which gives credit to the data.</div></span>
+
+						<div class="row"><div class="col-xs-10"><%%COMBO(authority_organization)%%></div><div class="col-xs-1"><%%PLINK(authority_organization)%%></div></div>
+					</div>
+				</div>
+
+			</fieldset>
+		</div>
+
+		<!-- DV action buttons -->
+		<div class="col-md-4 col-lg-2" id="biblio_author_dv_action_buttons">
+			<div class="btn-toolbar">
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%UPDATE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%DESELECT_BUTTON%%>
+					<%%DVPRINT_BUTTON%%>
+					<%%DELETE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%INSERT_BUTTON%%>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- child records -->
+	<hr>
+	<div class="row">
+		<div class="col-lg-10 col-lg-offset-1">
+			<div id="biblio_author-children" class="children-tabs"></div>
+		</div>
+	</div>
+
+</div><!-- /div class="panel-body" -->
+	<script>
+		$j(function() {
+			var add_new_mode = (!$j('input[name=SelectedID]').val());
+			var embedded_mode = ($j('input[name=Embedded]').val() == 1);
+
+			$j('select, input[type=text], textarea').not(':disabled').eq(0).focus();
+			$j('form').eq(0).change(function(){
+				if($j(this).data('already_changed')) return;
+				if($j('#deselect').length) $j('#deselect').removeClass('btn-default').addClass('btn-warning').get(0).lastChild.data = " <%%TRANSLATION(Cancel)%%>";
+				$j(this).data('already_changed', true);
+			});
+
+			$j('a[href="<%%TRANSLATION(ImageFolder)%%>"]').click(function(){ return false; });
+
+			if(embedded_mode){
+				/* hide links to children tables in embedded mode */
+				$j('.detail_view a[id$=_link]').remove();
+
+				/* append embedded mode to all links */
+				var append_embedded = function(){
+					$j('a[href]:not([href^=#]):not([href^=javascript]):not([href$="Embedded=1"])').each(
+						function(){
+							$j(this).attr('href', $j(this).attr('href') + '&Embedded=1');
+						}
+					);
+				}
+				setTimeout(append_embedded, 500);
+				setTimeout(append_embedded, 1500);
+				setTimeout(append_embedded, 2500);
+				setTimeout(append_embedded, 3500);
+			}
+
+			/* when no record is selected ('add new' mode) */
+			if(add_new_mode){
+				/* hide links to children tables */
+				$j('.detail_view a[id$=_link]').remove();
+			}else{
+				post(
+					'parent-children.php', {
+						ParentTable: 'biblio_author',
+						SelectedID: '<%%VALUE(id)%%>',
+						Operation: 'show-children'
+					},
+					'biblio_author-children'
+				);
+			}
+		});
+	</script>

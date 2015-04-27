@@ -1,0 +1,16 @@
+<!-- Edit this file to change the layout of each record in the table view -->
+<!-- To disable clicking of a field, remove the <%%select%%> and <%%endselect%%> formatters around it-->
+
+<!-- If you wish to hide the table view header that contains the column titles, -->
+<!-- open the generated 'storyweaving_scenes_view.php' file in your text editor and -->
+<!-- change the value of $x->ShowTableHeader to 0 -->
+
+		<td id="storyweaving_scenes-id-<%%VALUE(id)%%>" class="storyweaving_scenes-id text-right"><%%SELECT%%><%%VALUE(id)%%><%%ENDSELECT%%></td>
+		<td id="storyweaving_scenes-story-<%%VALUE(id)%%>" class="storyweaving_scenes-story text-right"><%%SELECT%%><%%VALUE(story)%%><%%ENDSELECT%%></td>
+		<td id="storyweaving_scenes-step-<%%VALUE(id)%%>" class="storyweaving_scenes-step "><%%SELECT%%><%%VALUE(step)%%><%%ENDSELECT%%></td>
+		<td id="storyweaving_scenes-throughline-<%%VALUE(id)%%>" class="storyweaving_scenes-throughline text-right"><%%SELECT%%><%%VALUE(throughline)%%><%%ENDSELECT%%></td>
+		<td id="storyweaving_scenes-domain-<%%VALUE(id)%%>" class="storyweaving_scenes-domain text-right"><%%SELECT%%><%%VALUE(domain)%%><%%ENDSELECT%%></td>
+		<td id="storyweaving_scenes-concern-<%%VALUE(id)%%>" class="storyweaving_scenes-concern text-right"><%%SELECT%%><%%VALUE(concern)%%><%%ENDSELECT%%></td>
+		<td id="storyweaving_scenes-sequence-<%%VALUE(id)%%>" class="storyweaving_scenes-sequence "><%%SELECT%%><%%VALUE(sequence)%%><%%ENDSELECT%%></td>
+		<td id="storyweaving_scenes-issue-<%%VALUE(id)%%>" class="storyweaving_scenes-issue text-right"><%%SELECT%%><%%VALUE(issue)%%><%%ENDSELECT%%></td>
+		<td id="storyweaving_scenes-theme-<%%VALUE(id)%%>" class="storyweaving_scenes-theme text-right"><%%SELECT%%><%%VALUE(theme)%%><%%ENDSELECT%%></td>

@@ -1,0 +1,14 @@
+<!-- Edit this file to change the layout of each record in the table view -->
+<!-- To disable clicking of a field, remove the <%%select%%> and <%%endselect%%> formatters around it-->
+
+<!-- If you wish to hide the table view header that contains the column titles, -->
+<!-- open the generated 'storypoints_static_view.php' file in your text editor and -->
+<!-- change the value of $x->ShowTableHeader to 0 -->
+
+		<td id="storypoints_static-id-<%%VALUE(id)%%>" class="storypoints_static-id text-right"><%%SELECT%%><%%VALUE(id)%%><%%ENDSELECT%%></td>
+		<td id="storypoints_static-story-<%%VALUE(id)%%>" class="storypoints_static-story text-right"><%%SELECT%%><%%VALUE(story)%%><%%ENDSELECT%%></td>
+		<td id="storypoints_static-throughline-<%%VALUE(id)%%>" class="storypoints_static-throughline text-right"><%%SELECT%%><%%VALUE(throughline)%%><%%ENDSELECT%%></td>
+		<td id="storypoints_static-throughline_domain-<%%VALUE(id)%%>" class="storypoints_static-throughline_domain text-right"><%%SELECT%%><%%VALUE(throughline_domain)%%><%%ENDSELECT%%></td>
+		<td id="storypoints_static-concern-<%%VALUE(id)%%>" class="storypoints_static-concern text-right"><%%SELECT%%><%%VALUE(concern)%%><%%ENDSELECT%%></td>
+		<td id="storypoints_static-issue-<%%VALUE(id)%%>" class="storypoints_static-issue text-right"><%%SELECT%%><%%VALUE(issue)%%><%%ENDSELECT%%></td>
+		<td id="storypoints_static-problem-<%%VALUE(id)%%>" class="storypoints_static-problem text-right"><%%SELECT%%><%%VALUE(problem)%%><%%ENDSELECT%%></td>

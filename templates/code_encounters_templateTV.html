@@ -1,0 +1,13 @@
+<!-- Edit this file to change the layout of each record in the table view -->
+<!-- To disable clicking of a field, remove the <%%select%%> and <%%endselect%%> formatters around it-->
+
+<!-- If you wish to hide the table view header that contains the column titles, -->
+<!-- open the generated 'code_encounters_view.php' file in your text editor and -->
+<!-- change the value of $x->ShowTableHeader to 0 -->
+
+		<td id="code_encounters-id-<%%VALUE(id)%%>" class="code_encounters-id text-right"><%%SELECT%%><%%VALUE(id)%%><%%ENDSELECT%%></td>
+		<td id="code_encounters-agentA-<%%VALUE(id)%%>" class="code_encounters-agentA "><%%SELECT%%><%%VALUE(agentA)%%><%%ENDSELECT%%></td>
+		<td id="code_encounters-agentB-<%%VALUE(id)%%>" class="code_encounters-agentB "><%%SELECT%%><%%VALUE(agentB)%%><%%ENDSELECT%%></td>
+		<td id="code_encounters-type-<%%VALUE(id)%%>" class="code_encounters-type "><%%SELECT%%><%%VALUE(type)%%><%%ENDSELECT%%></td>
+		<td id="code_encounters-conflicttype-<%%VALUE(id)%%>" class="code_encounters-conflicttype "><%%SELECT%%><%%VALUE(conflicttype)%%><%%ENDSELECT%%></td>
+		<td id="code_encounters-story_scene-<%%VALUE(id)%%>" class="code_encounters-story_scene "><%%SELECT%%><%%VALUE(story_scene)%%><%%ENDSELECT%%></td>

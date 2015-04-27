@@ -1,0 +1,176 @@
+<!-- Edit this file to change the layout of the detail view print preview page -->
+
+
+<div class="panel-heading"><h3 class="panel-title">
+	<strong><%%DETAIL_VIEW_TITLE%%></strong>
+	<div class="hidden-print pull-right">
+		<button type="button" id="print" onclick="window.print();" title="<%%TRANSLATION(Print)%%>" class="btn btn-success"><i class="glyphicon glyphicon-print"></i></button>
+		<button type="submit" id="back" title="<%%TRANSLATION(Back)%%>" class="btn btn-warning"><i class="glyphicon glyphicon-remove"></i></button>
+	</div>
+	<div class="clearfix"></div>
+</h3></div>
+
+<div class="panel-body">
+	<fieldset class="form-horizontal">
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">id</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><%%VALUE(id)%%></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Img</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><script>
+				var imgSrc1<%%RND1%%>='<%%TRANSLATION(ImageFolder)%%><%%VALUE(img)%%>';
+				var imgSrc2<%%RND1%%>='thumbnail.php?t=biblio_doc&f=img&i=<%%VALUE(img)%%>&v=dv'
+			</script>
+			<a href="#" onclick="$('imgImg<%%RND1%%>').src=($('imgImg<%%RND1%%>').src.search(/thumbnail\.php/) != -1 && imgSrc1<%%RND1%%> != '<%%TRANSLATION(ImageFolder)%%>' ? imgSrc1<%%RND1%%> : imgSrc2<%%RND1%%>); return false;"><img id="imgImg<%%RND1%%>" src="thumbnail.php?t=biblio_doc&f=img&i=<%%VALUE(img)%%>&v=dv" class="img-thumbnail"></a></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Author name</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><span id="author_name<%%RND1%%>"><%%COMBOTEXT(author_name)%%></span></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Author id</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><span id="author_id<%%RND1%%>"></span></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Document type</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><span id="type<%%RND1%%>"><%%COMBOTEXT(type)%%></span></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Genre</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><span id="genre<%%RND1%%>"><%%COMBOTEXT(genre)%%></span></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Created</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><%%VALUE(created)%%></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Published</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><%%VALUE(published)%%></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Title</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><%%VALUE(title)%%></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Subtitle</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><%%VALUE(subtitle)%%></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Publisher</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><%%VALUE(publisher)%%></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Place of publication</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><%%VALUE(location)%%></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Citation</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><%%VALUE(citation)%%></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Description</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><%%VALUE(description)%%></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Source</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><%%VALUE(source)%%></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Medium</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><%%VALUE(medium)%%></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Language</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><span id="language<%%RND1%%>"><%%COMBOTEXT(language)%%></span></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Format</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><%%VALUE(format)%%></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Subject</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><%%VALUE(subject)%%></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Rights</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><span id="rights<%%RND1%%>"><%%COMBOTEXT(rights)%%></span></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Rights holder</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><%%VALUE(rights_holder)%%></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Data evaluation</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><%%COMBOTEXT(data_evaluation)%%></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Authority records</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><%%VALUE(authority_record)%%></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Authority organization</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><span id="authority_organization<%%RND1%%>"><%%COMBOTEXT(authority_organization)%%></span></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Pdf book</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><a id="pdf_book-link" href="link.php?t=biblio_doc&f=pdf_book&i=<%%VALUE(id)%%>" target="_blank"><i class="glyphicon glyphicon-globe" title="<%%VALUE(pdf_book)%%>"></i></a><script>jQuery(function(){ var e_pdf_book = '<%%VALUE(pdf_book)%%>'; if(e_pdf_book == '' || e_pdf_book == '&nbsp;' || e_pdf_book == 'blank.gif') jQuery('#pdf_book-link').hide(); });</script></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">External source</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><a id="ext_source-link" href="link.php?t=biblio_doc&f=ext_source&i=<%%VALUE(id)%%>" target="_blank"><i class="glyphicon glyphicon-globe" title="<%%VALUE(ext_source)%%>"></i></a><script>jQuery(function(){ var e_ext_source = '<%%VALUE(ext_source)%%>'; if(e_ext_source == '' || e_ext_source == '&nbsp;' || e_ext_source == 'blank.gif') jQuery('#ext_source-link').hide(); });</script></p>
+			</div>
+		</div>
+	</fieldset>
+</div>

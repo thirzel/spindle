@@ -1,0 +1,13 @@
+<!-- Edit this file to change the layout of each record in the table view -->
+<!-- To disable clicking of a field, remove the <%%select%%> and <%%endselect%%> formatters around it-->
+
+<!-- If you wish to hide the table view header that contains the column titles, -->
+<!-- open the generated 'biblio_author_view.php' file in your text editor and -->
+<!-- change the value of $x->ShowTableHeader to 0 -->
+
+		<td id="biblio_author-memberID-<%%VALUE(id)%%>" class="biblio_author-memberID "><%%SELECT%%><%%VALUE(memberID)%%><%%ENDSELECT%%></td>
+		<td id="biblio_author-img-<%%VALUE(id)%%>" class="biblio_author-img "><a href="<%%TRANSLATION(ImageFolder)%%><%%VALUE(img)%%>" rel="lightbox"><img src="thumbnail.php?i=<%%VALUE(img)%%>&t=biblio_author&f=img&v=tv" class="img-thumbnail"></a></td>
+		<td id="biblio_author-gender-<%%VALUE(id)%%>" class="biblio_author-gender "><%%SELECT%%><%%VALUE(gender)%%><%%ENDSELECT%%></td>
+		<td id="biblio_author-last_name-<%%VALUE(id)%%>" class="biblio_author-last_name "><%%SELECT%%><%%VALUE(last_name)%%><%%ENDSELECT%%></td>
+		<td id="biblio_author-first_name-<%%VALUE(id)%%>" class="biblio_author-first_name "><%%SELECT%%><%%VALUE(first_name)%%><%%ENDSELECT%%></td>
+		<td id="biblio_author-birthday-<%%VALUE(id)%%>" class="biblio_author-birthday "><%%SELECT%%><%%VALUE(birthday)%%><%%ENDSELECT%%></td>

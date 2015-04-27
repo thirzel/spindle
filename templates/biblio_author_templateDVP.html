@@ -1,0 +1,146 @@
+<!-- Edit this file to change the layout of the detail view print preview page -->
+
+
+<div class="panel-heading"><h3 class="panel-title">
+	<strong><%%DETAIL_VIEW_TITLE%%></strong>
+	<div class="hidden-print pull-right">
+		<button type="button" id="print" onclick="window.print();" title="<%%TRANSLATION(Print)%%>" class="btn btn-success"><i class="glyphicon glyphicon-print"></i></button>
+		<button type="submit" id="back" title="<%%TRANSLATION(Back)%%>" class="btn btn-warning"><i class="glyphicon glyphicon-remove"></i></button>
+	</div>
+	<div class="clearfix"></div>
+</h3></div>
+
+<div class="panel-body">
+	<fieldset class="form-horizontal">
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">ID</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><%%VALUE(id)%%></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">MemberID</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><%%VALUE(memberID)%%></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Img</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><script>
+				var imgSrc1<%%RND1%%>='<%%TRANSLATION(ImageFolder)%%><%%VALUE(img)%%>';
+				var imgSrc2<%%RND1%%>='thumbnail.php?t=biblio_author&f=img&i=<%%VALUE(img)%%>&v=dv'
+			</script>
+			<a href="#" onclick="$('imgImg<%%RND1%%>').src=($('imgImg<%%RND1%%>').src.search(/thumbnail\.php/) != -1 && imgSrc1<%%RND1%%> != '<%%TRANSLATION(ImageFolder)%%>' ? imgSrc1<%%RND1%%> : imgSrc2<%%RND1%%>); return false;"><img id="imgImg<%%RND1%%>" src="thumbnail.php?t=biblio_author&f=img&i=<%%VALUE(img)%%>&v=dv" class="img-thumbnail"></a></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">GroupID</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><%%VALUE(groupID)%%></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Selection phase</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><%%VALUE(selection_class)%%></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Agent category</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><span id="agenttype1<%%RND1%%>"><%%COMBOTEXT(agenttype1)%%></span></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Agent group</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><span id="agenttype2<%%RND1%%>"><%%COMBOTEXT(agenttype2)%%></span></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Gender</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><%%COMBOTEXT(gender)%%></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Last name</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><%%VALUE(last_name)%%></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">First name</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><%%VALUE(first_name)%%></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Other name(s)</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><%%VALUE(other_name)%%></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Date of birth</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><%%VALUE(birthday)%%></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Place of birth</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><%%VALUE(birth_location)%%></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Date of death</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><%%VALUE(deathday)%%></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Place of death</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><%%VALUE(death_location)%%></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Place of action</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><%%VALUE(workplace)%%></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Related person(s)</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><%%VALUE(knows)%%></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Short biography</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><%%VALUE(shortbio)%%></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Data evaluation</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><%%COMBOTEXT(data_evaluation)%%></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Authority record</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><%%VALUE(authority_record)%%></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Authority organization</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><span id="authority_organization<%%RND1%%>"><%%COMBOTEXT(authority_organization)%%></span></p>
+			</div>
+		</div>
+	</fieldset>
+</div>

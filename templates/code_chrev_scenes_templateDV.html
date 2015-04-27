@@ -1,0 +1,198 @@
+<!-- Edit this file to change the layout of the detail view form -->
+
+<a name="detail-view"></a>
+<div class="panel-heading"><h3 class="panel-title"><strong><%%DETAIL_VIEW_TITLE%%></strong></h3></div>
+
+<div class="panel-body" id="code_chrev_scenes_dv_container">
+	<!-- child links -->
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<hr>
+
+	<div class="row">
+		<!-- form inputs -->
+		<div class="col-md-8 col-lg-10" id="code_chrev_scenes_dv_form">
+			<fieldset class="form-horizontal">
+
+				<div class="form-group">
+					<label for="id" class="control-label col-lg-3">id <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#id-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="id-description"><div class="alert alert-info">This table serves to encode information from an agent's authentic text tokens into scenes related to the character.<br>It will be used for the encounter table, and matched their with another's agent's text.</div></span>
+
+						<p class="form-control-static" id="id"><%%VALUE(id)%%></p>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="author" class="control-label col-lg-3">Author <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#author-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="author-description"><div class="alert alert-info">The author of the document.</div></span>
+
+						<div class="row"><div class="col-xs-10"><%%COMBO(author)%%></div><div class="col-xs-1"><%%PLINK(author)%%></div></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="bibliography" class="control-label col-lg-3">Bibliography <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#bibliography-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="bibliography-description"><div class="alert alert-info">The document the text to be coded belongs to.</div></span>
+
+						<div class="row"><div class="col-xs-10"><%%COMBO(bibliography)%%></div><div class="col-xs-1"><%%PLINK(bibliography)%%></div></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="transcript" class="control-label col-lg-3">Transcript <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#transcript-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="transcript-description"><div class="alert alert-info">Chose the transcript version from the "transcript" table or introduce it, if missing.</div></span>
+
+						<div class="row"><div class="col-xs-10"><%%COMBO(transcript)%%></div><div class="col-xs-1"><%%PLINK(transcript)%%></div></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="token_sequence" class="control-label col-lg-3">Token sequence</label>
+					<div class="col-lg-9">
+						<div class="row"><div class="col-xs-10"><%%COMBO(token_sequence)%%></div><div class="col-xs-1"><%%PLINK(token_sequence)%%></div><div class="col-xs-1"><span id="token_sequenceLoading"></span></div></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="token" class="control-label col-lg-3">Token</label>
+					<div class="col-lg-9">
+						<p class="form-control-static" id="token"></p>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="agent" class="control-label col-lg-3">Agent <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#agent-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="agent-description"><div class="alert alert-info">This field refers to the agent the text token relates to. This must not necessarily be its author.<br>It will be used further for the character development.<br>Don't leave this field empty!</div></span>
+
+						<div class="row"><div class="col-xs-10"><%%COMBO(agent)%%></div><div class="col-xs-1"><%%PLINK(agent)%%></div></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="invivo_code" class="control-label col-lg-3">Invivo code <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#invivo_code-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="invivo_code-description"><div class="alert alert-info">Chose the coding information from the semantic analysis.</div></span>
+
+						<div class="row"><div class="col-xs-10"><%%COMBO(invivo_code)%%></div><div class="col-xs-1"><%%PLINK(invivo_code)%%></div><div class="col-xs-1"><span id="invivo_codeLoading"></span></div></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="startdate" class="control-label col-lg-3">Start date</label>
+					<div class="col-lg-9">
+						<p class="form-control-static" id="startdate"></p>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="end_date" class="control-label col-lg-3">End date</label>
+					<div class="col-lg-9">
+						<p class="form-control-static" id="end_date"></p>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="person" class="control-label col-lg-3">Person(s)</label>
+					<div class="col-lg-9">
+						<p class="form-control-static" id="person"></p>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="place" class="control-label col-lg-3">Place(s)</label>
+					<div class="col-lg-9">
+						<p class="form-control-static" id="place"></p>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="freecode" class="control-label col-lg-3">Freecode</label>
+					<div class="col-lg-9">
+						<p class="form-control-static" id="freecode"></p>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="herme_code" class="control-label col-lg-3">Hermeneutic code <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#herme_code-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="herme_code-description"><div class="alert alert-info">Chose the information from the hermeneutical encoding.</div></span>
+
+						<div class="row"><div class="col-xs-10"><%%COMBO(herme_code)%%></div><div class="col-xs-1"><%%PLINK(herme_code)%%></div><div class="col-xs-1"><span id="herme_codeLoading"></span></div></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="impression" class="control-label col-lg-3">Impression</label>
+					<div class="col-lg-9">
+						<p class="form-control-static" id="impression"></p>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="noetictension" class="control-label col-lg-3">Noetic tension</label>
+					<div class="col-lg-9">
+						<p class="form-control-static" id="noetictension"></p>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="comment" class="control-label col-lg-3">Comment</label>
+					<div class="col-lg-9">
+						<p class="form-control-static" id="comment"></p>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="scene" class="control-label col-lg-3">Scene</label>
+					<div class="col-lg-9">
+						<div class="row"><div class="col-xs-10"><%%COMBO(scene)%%></div><div class="col-xs-1"><%%PLINK(scene)%%></div></div>
+					</div>
+				</div>
+
+			</fieldset>
+		</div>
+
+		<!-- DV action buttons -->
+		<div class="col-md-4 col-lg-2" id="code_chrev_scenes_dv_action_buttons">
+			<div class="btn-toolbar">
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%UPDATE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%DESELECT_BUTTON%%>
+					<%%DVPRINT_BUTTON%%>
+					<%%DELETE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%INSERT_BUTTON%%>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</div><!-- /div class="panel-body" -->
+	<script>
+		$j(function() {
+			var add_new_mode = (!$j('input[name=SelectedID]').val());
+			var embedded_mode = ($j('input[name=Embedded]').val() == 1);
+
+			$j('select, input[type=text], textarea').not(':disabled').eq(0).focus();
+			$j('form').eq(0).change(function(){
+				if($j(this).data('already_changed')) return;
+				if($j('#deselect').length) $j('#deselect').removeClass('btn-default').addClass('btn-warning').get(0).lastChild.data = " <%%TRANSLATION(Cancel)%%>";
+				$j(this).data('already_changed', true);
+			});
+
+			$j('a[href="<%%TRANSLATION(ImageFolder)%%>"]').click(function(){ return false; });
+
+		});
+	</script>

@@ -1,0 +1,94 @@
+<!-- Edit this file to change the layout of the detail view print preview page -->
+
+
+<div class="panel-heading"><h3 class="panel-title">
+	<strong><%%DETAIL_VIEW_TITLE%%></strong>
+	<div class="hidden-print pull-right">
+		<button type="button" id="print" onclick="window.print();" title="<%%TRANSLATION(Print)%%>" class="btn btn-success"><i class="glyphicon glyphicon-print"></i></button>
+		<button type="submit" id="back" title="<%%TRANSLATION(Back)%%>" class="btn btn-warning"><i class="glyphicon glyphicon-remove"></i></button>
+	</div>
+	<div class="clearfix"></div>
+</h3></div>
+
+<div class="panel-body">
+	<fieldset class="form-horizontal">
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">id</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><%%VALUE(id)%%></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Story</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><span id="story<%%RND1%%>"><%%COMBOTEXT(story)%%></span></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Agent</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><span id="agent<%%RND1%%>"><%%COMBOTEXT(agent)%%></span></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Story character</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><span id="story_character<%%RND1%%>"></span></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Author</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><span id="author<%%RND1%%>"><%%COMBOTEXT(author)%%></span></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Bibliography</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><span id="bibliography<%%RND1%%>"><%%COMBOTEXT(bibliography)%%></span></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Transcript</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><span id="transcript<%%RND1%%>"><%%COMBOTEXT(transcript)%%></span></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Token sequence</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><span id="token_sequence<%%RND1%%>"></span></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Token</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><span id="token<%%RND1%%>"><%%COMBOTEXT(token)%%></span></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Code</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><span id="code<%%RND1%%>"><%%COMBOTEXT(code)%%></span></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Character element</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><span id="character_element<%%RND1%%>"><%%COMBOTEXT(character_element)%%></span></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Value</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><%%VALUE(character_elem_value)%%></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Comment</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><%%VALUE(comment)%%></p>
+			</div>
+		</div>
+	</fieldset>
+</div>

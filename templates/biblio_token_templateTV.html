@@ -1,0 +1,13 @@
+<!-- Edit this file to change the layout of each record in the table view -->
+<!-- To disable clicking of a field, remove the <%%select%%> and <%%endselect%%> formatters around it-->
+
+<!-- If you wish to hide the table view header that contains the column titles, -->
+<!-- open the generated 'biblio_token_view.php' file in your text editor and -->
+<!-- change the value of $x->ShowTableHeader to 0 -->
+
+		<td id="biblio_token-id-<%%VALUE(id)%%>" class="biblio_token-id text-right"><%%SELECT%%><%%VALUE(id)%%><%%ENDSELECT%%></td>
+		<td id="biblio_token-author-<%%VALUE(id)%%>" class="biblio_token-author "><%%SELECT%%><%%VALUE(author)%%><%%ENDSELECT%%></td>
+		<td id="biblio_token-bibliography-<%%VALUE(id)%%>" class="biblio_token-bibliography text-right"><%%SELECT%%><%%VALUE(bibliography)%%><%%ENDSELECT%%></td>
+		<td id="biblio_token-transcript-<%%VALUE(id)%%>" class="biblio_token-transcript "><%%SELECT%%><%%VALUE(transcript)%%><%%ENDSELECT%%></td>
+		<td id="biblio_token-token_sequence-<%%VALUE(id)%%>" class="biblio_token-token_sequence text-right"><%%SELECT%%><%%VALUE(token_sequence)%%><%%ENDSELECT%%></td>
+		<td id="biblio_token-token-<%%VALUE(id)%%>" class="biblio_token-token "><%%SELECT%%><%%VALUE(token)%%><%%ENDSELECT%%></td>

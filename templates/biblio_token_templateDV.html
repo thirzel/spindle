@@ -1,0 +1,163 @@
+<!-- Edit this file to change the layout of the detail view form -->
+
+<a name="detail-view"></a>
+<div class="panel-heading"><h3 class="panel-title"><strong><%%DETAIL_VIEW_TITLE%%></strong></h3></div>
+
+<div class="panel-body" id="biblio_token_dv_container">
+	<!-- child links -->
+	<div class="row">
+		<div class="col-xs-12">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="code_invivo_view.php?filterer_token_sequence=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>" id="code_invivo_link"><i class="glyphicon glyphicon-list-alt"></i> Invivo</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="code_invivo_view.php?filterer_token_sequence=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>" id="xs_code_invivo_link"><i class="glyphicon glyphicon-list-alt"></i> Invivo</a>
+			<input type="hidden" id="code_invivo_hclink" value="code_invivo_view.php?filterer_token_sequence=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="code_herme_view.php?filterer_token_sequence=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>" id="code_herme_link"><i class="glyphicon glyphicon-list-alt"></i> Hermeneutic</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="code_herme_view.php?filterer_token_sequence=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>" id="xs_code_herme_link"><i class="glyphicon glyphicon-list-alt"></i> Hermeneutic</a>
+			<input type="hidden" id="code_herme_hclink" value="code_herme_view.php?filterer_token_sequence=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="code_chrev_scenes_view.php?filterer_token_sequence=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>" id="code_chrev_scenes_link"><i class="glyphicon glyphicon-list-alt"></i> Character scenes</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="code_chrev_scenes_view.php?filterer_token_sequence=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>" id="xs_code_chrev_scenes_link"><i class="glyphicon glyphicon-list-alt"></i> Character scenes</a>
+			<input type="hidden" id="code_chrev_scenes_hclink" value="code_chrev_scenes_view.php?filterer_token_sequence=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="code_character_development_view.php?filterer_token=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>" id="code_character_development_link"><i class="glyphicon glyphicon-list-alt"></i> Character dev.</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="code_character_development_view.php?filterer_token=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>" id="xs_code_character_development_link"><i class="glyphicon glyphicon-list-alt"></i> Character dev.</a>
+			<input type="hidden" id="code_character_development_hclink" value="code_character_development_view.php?filterer_token=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="code_encounters_view.php?filterer_tokenA=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>" id="code_encounters_link"><i class="glyphicon glyphicon-list-alt"></i> Encounters</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="code_encounters_view.php?filterer_tokenA=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>" id="xs_code_encounters_link"><i class="glyphicon glyphicon-list-alt"></i> Encounters</a>
+			<input type="hidden" id="code_encounters_hclink" value="code_encounters_view.php?filterer_tokenA=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>">
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<hr>
+
+	<div class="row">
+		<!-- form inputs -->
+		<div class="col-md-8 col-lg-10" id="biblio_token_dv_form">
+			<fieldset class="form-horizontal">
+
+				<div class="form-group">
+					<label for="id" class="control-label col-lg-3">id</label>
+					<div class="col-lg-9">
+						<p class="form-control-static" id="id"><%%VALUE(id)%%></p>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="author" class="control-label col-lg-3">Author <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#author-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="author-description"><div class="alert alert-info">Chose the author from the "agent" table or introduce him or her there first, if missing.</div></span>
+
+						<div class="row"><div class="col-xs-10"><%%COMBO(author)%%></div><div class="col-xs-1"><%%PLINK(author)%%></div></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="bibliography" class="control-label col-lg-3">Bibliography <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#bibliography-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="bibliography-description"><div class="alert alert-info">Chose the document from the "bibliography" table or introduce it, if missing.</div></span>
+
+						<div class="row"><div class="col-xs-10"><%%COMBO(bibliography)%%></div><div class="col-xs-1"><%%PLINK(bibliography)%%></div></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="transcript" class="control-label col-lg-3">Transcript <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#transcript-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="transcript-description"><div class="alert alert-info">Chose the transcript version from the "transcript" table or introduce it, if missing.<br><br>At the moment it is not possible to tokenize a transcript automatically. <br>Therefore, you have to asked the Webmaster to upload it to the token table.<br>Tokenize transcript before and upload it as CSV-file.<br>Use this free tool: http://taporware.ualberta.ca/~taporware/htmlTools/tokenize.shtml</div></span>
+
+						<div class="row"><div class="col-xs-10"><%%COMBO(transcript)%%></div><div class="col-xs-1"><%%PLINK(transcript)%%></div></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="token_sequence" class="control-label col-lg-3">Token sequence <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#token_sequence-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="token_sequence-description"><div class="alert alert-info">Set a sequence number to keep the document consistent.</div></span>
+
+						<input maxlength="11" type="text" class="form-control" name="token_sequence" id="token_sequence" value="<%%VALUE(token_sequence)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="token" class="control-label col-lg-3">Token</label>
+					<div class="col-lg-9">
+						<input maxlength="" type="text" class="form-control" name="token" id="token" value="<%%VALUE(token)%%>">
+					</div>
+				</div>
+
+			</fieldset>
+		</div>
+
+		<!-- DV action buttons -->
+		<div class="col-md-4 col-lg-2" id="biblio_token_dv_action_buttons">
+			<div class="btn-toolbar">
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%UPDATE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%DESELECT_BUTTON%%>
+					<%%DVPRINT_BUTTON%%>
+					<%%DELETE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%INSERT_BUTTON%%>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- child records -->
+	<hr>
+	<div class="row">
+		<div class="col-lg-10 col-lg-offset-1">
+			<div id="biblio_token-children" class="children-tabs"></div>
+		</div>
+	</div>
+
+</div><!-- /div class="panel-body" -->
+	<script>
+		$j(function() {
+			var add_new_mode = (!$j('input[name=SelectedID]').val());
+			var embedded_mode = ($j('input[name=Embedded]').val() == 1);
+
+			$j('select, input[type=text], textarea').not(':disabled').eq(0).focus();
+			$j('form').eq(0).change(function(){
+				if($j(this).data('already_changed')) return;
+				if($j('#deselect').length) $j('#deselect').removeClass('btn-default').addClass('btn-warning').get(0).lastChild.data = " <%%TRANSLATION(Cancel)%%>";
+				$j(this).data('already_changed', true);
+			});
+
+			$j('a[href="<%%TRANSLATION(ImageFolder)%%>"]').click(function(){ return false; });
+
+			if(embedded_mode){
+				/* hide links to children tables in embedded mode */
+				$j('.detail_view a[id$=_link]').remove();
+
+				/* append embedded mode to all links */
+				var append_embedded = function(){
+					$j('a[href]:not([href^=#]):not([href^=javascript]):not([href$="Embedded=1"])').each(
+						function(){
+							$j(this).attr('href', $j(this).attr('href') + '&Embedded=1');
+						}
+					);
+				}
+				setTimeout(append_embedded, 500);
+				setTimeout(append_embedded, 1500);
+				setTimeout(append_embedded, 2500);
+				setTimeout(append_embedded, 3500);
+			}
+
+			/* when no record is selected ('add new' mode) */
+			if(add_new_mode){
+				/* hide links to children tables */
+				$j('.detail_view a[id$=_link]').remove();
+			}else{
+				post(
+					'parent-children.php', {
+						ParentTable: 'biblio_token',
+						SelectedID: '<%%VALUE(id)%%>',
+						Operation: 'show-children'
+					},
+					'biblio_token-children'
+				);
+			}
+		});
+	</script>
