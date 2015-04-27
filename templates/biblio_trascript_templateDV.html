@@ -1,0 +1,191 @@
+<!-- Edit this file to change the layout of the detail view form -->
+
+<a name="detail-view"></a>
+<div class="panel-heading"><h3 class="panel-title"><strong><%%DETAIL_VIEW_TITLE%%></strong></h3></div>
+
+<div class="panel-body" id="biblio_trascript_dv_container">
+	<!-- child links -->
+	<div class="row">
+		<div class="col-xs-12">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="biblio_token_view.php?filterer_transcript=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>" id="biblio_token_link"><i class="glyphicon glyphicon-list-alt"></i> Token</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="biblio_token_view.php?filterer_transcript=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>" id="xs_biblio_token_link"><i class="glyphicon glyphicon-list-alt"></i> Token</a>
+			<input type="hidden" id="biblio_token_hclink" value="biblio_token_view.php?filterer_transcript=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>">
+			<input type="hidden" id="code_invivo_hclink" value="code_invivo_view.php?filterer_transcript=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>">
+			<input type="hidden" id="code_herme_hclink" value="code_herme_view.php?filterer_transcript=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>">
+			<input type="hidden" id="code_chrev_scenes_hclink" value="code_chrev_scenes_view.php?filterer_transcript=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>">
+			<input type="hidden" id="code_character_development_hclink" value="code_character_development_view.php?filterer_transcript=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>">
+			<input type="hidden" id="code_encounters_hclink" value="code_encounters_view.php?filterer_transcriptA=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>">
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<hr>
+
+	<div class="row">
+		<!-- form inputs -->
+		<div class="col-md-8 col-lg-10" id="biblio_trascript_dv_form">
+			<fieldset class="form-horizontal">
+
+				<div class="form-group">
+					<label for="id" class="control-label col-lg-3">ID</label>
+					<div class="col-lg-9">
+						<p class="form-control-static" id="id"><%%VALUE(id)%%></p>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="author" class="control-label col-lg-3">Author</label>
+					<div class="col-lg-9">
+						<div class="row"><div class="col-xs-10"><%%COMBO(author)%%></div><div class="col-xs-1"><%%PLINK(author)%%></div><div class="col-xs-1"><span id="authorLoading"></span></div></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="author_memberID" class="control-label col-lg-3">Author id.</label>
+					<div class="col-lg-9">
+						<p class="form-control-static"><span id="author_memberID"><%%COMBOTEXT(author_memberID)%%></span> <%%PLINK(author_memberID)%%></p>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="bibliography_id" class="control-label col-lg-3">Bibliography id.</label>
+					<div class="col-lg-9">
+						<p class="form-control-static"><span id="bibliography_id"><%%COMBOTEXT(bibliography_id)%%></span> <%%PLINK(bibliography_id)%%></p>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="bibliography_title" class="control-label col-lg-3">Bibliography title</label>
+					<div class="col-lg-9">
+						<div class="row"><div class="col-xs-10"><%%COMBO(bibliography_title)%%></div><div class="col-xs-1"><%%PLINK(bibliography_title)%%></div><div class="col-xs-1"><span id="bibliography_titleLoading"></span></div></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="trascriber_memberID" class="control-label col-lg-3">Trascriber id. <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#trascriber_memberID-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="trascriber_memberID-description"><div class="alert alert-info">The "user member id".</div></span>
+
+						<input maxlength="40" type="text" class="form-control" name="trascriber_memberID" id="trascriber_memberID" value="<%%VALUE(trascriber_memberID)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="transcript_title" class="control-label col-lg-3">Transcript title</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="transcript_title" id="transcript_title" value="<%%VALUE(transcript_title)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="transcript" class="control-label col-lg-3">Transcript <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#transcript-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="transcript-description"><div class="alert alert-info">Maximum file size allowed: 90000 KB.<br>Allowed file types: txt, doc, docx, docm, odt, pdf, rtf</div></span>
+
+						
+						<p class="form-control-static">
+							<a id="transcript-link" href="link.php?t=biblio_trascript&f=transcript&i=<%%VALUE(id)%%>" target="_blank"><i class="glyphicon glyphicon-globe" title="<%%VALUE(transcript)%%>"></i></a>
+						</p>
+						<script>jQuery(function(){ var e_transcript = '<%%VALUE(transcript)%%>'; if(e_transcript == '' || e_transcript == '&nbsp;' || e_transcript == 'blank.gif') jQuery('#transcript-link').hide(); });</script>						<div class="col-md-4">
+							<%%UPLOADFILE(transcript)%%>
+							<%%REMOVEFILE(transcript)%%>
+						</div>
+
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="credits" class="control-label col-lg-3">Credits <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#credits-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="credits-description"><div class="alert alert-info">Upload a text file with all the credits related to the transcription of the document.</div></span>
+
+						
+						<p class="form-control-static">
+							<a id="credits-link" href="link.php?t=biblio_trascript&f=credits&i=<%%VALUE(id)%%>" target="_blank"><i class="glyphicon glyphicon-globe" title="<%%VALUE(credits)%%>"></i></a>
+						</p>
+						<script>jQuery(function(){ var e_credits = '<%%VALUE(credits)%%>'; if(e_credits == '' || e_credits == '&nbsp;' || e_credits == 'blank.gif') jQuery('#credits-link').hide(); });</script>						<div class="col-md-4">
+							<%%UPLOADFILE(credits)%%>
+							<%%REMOVEFILE(credits)%%>
+						</div>
+
+					</div>
+				</div>
+
+			</fieldset>
+		</div>
+
+		<!-- DV action buttons -->
+		<div class="col-md-4 col-lg-2" id="biblio_trascript_dv_action_buttons">
+			<div class="btn-toolbar">
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%UPDATE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%DESELECT_BUTTON%%>
+					<%%DVPRINT_BUTTON%%>
+					<%%DELETE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%INSERT_BUTTON%%>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- child records -->
+	<hr>
+	<div class="row">
+		<div class="col-lg-10 col-lg-offset-1">
+			<div id="biblio_trascript-children" class="children-tabs"></div>
+		</div>
+	</div>
+
+</div><!-- /div class="panel-body" -->
+	<script>
+		$j(function() {
+			var add_new_mode = (!$j('input[name=SelectedID]').val());
+			var embedded_mode = ($j('input[name=Embedded]').val() == 1);
+
+			$j('select, input[type=text], textarea').not(':disabled').eq(0).focus();
+			$j('form').eq(0).change(function(){
+				if($j(this).data('already_changed')) return;
+				if($j('#deselect').length) $j('#deselect').removeClass('btn-default').addClass('btn-warning').get(0).lastChild.data = " <%%TRANSLATION(Cancel)%%>";
+				$j(this).data('already_changed', true);
+			});
+
+			$j('a[href="<%%TRANSLATION(ImageFolder)%%>"]').click(function(){ return false; });
+
+			if(embedded_mode){
+				/* hide links to children tables in embedded mode */
+				$j('.detail_view a[id$=_link]').remove();
+
+				/* append embedded mode to all links */
+				var append_embedded = function(){
+					$j('a[href]:not([href^=#]):not([href^=javascript]):not([href$="Embedded=1"])').each(
+						function(){
+							$j(this).attr('href', $j(this).attr('href') + '&Embedded=1');
+						}
+					);
+				}
+				setTimeout(append_embedded, 500);
+				setTimeout(append_embedded, 1500);
+				setTimeout(append_embedded, 2500);
+				setTimeout(append_embedded, 3500);
+			}
+
+			/* when no record is selected ('add new' mode) */
+			if(add_new_mode){
+				/* hide links to children tables */
+				$j('.detail_view a[id$=_link]').remove();
+			}else{
+				post(
+					'parent-children.php', {
+						ParentTable: 'biblio_trascript',
+						SelectedID: '<%%VALUE(id)%%>',
+						Operation: 'show-children'
+					},
+					'biblio_trascript-children'
+				);
+			}
+		});
+	</script>

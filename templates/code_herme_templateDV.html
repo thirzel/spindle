@@ -1,0 +1,181 @@
+<!-- Edit this file to change the layout of the detail view form -->
+
+<a name="detail-view"></a>
+<div class="panel-heading"><h3 class="panel-title"><strong><%%DETAIL_VIEW_TITLE%%></strong></h3></div>
+
+<div class="panel-body" id="code_herme_dv_container">
+	<!-- child links -->
+	<div class="row">
+		<div class="col-xs-12">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="code_chrev_scenes_view.php?filterer_herme_code=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>" id="code_chrev_scenes_link"><i class="glyphicon glyphicon-list-alt"></i> Character scenes</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="code_chrev_scenes_view.php?filterer_herme_code=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>" id="xs_code_chrev_scenes_link"><i class="glyphicon glyphicon-list-alt"></i> Character scenes</a>
+			<input type="hidden" id="code_chrev_scenes_hclink" value="code_chrev_scenes_view.php?filterer_herme_code=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="code_character_development_view.php?filterer_code=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>" id="code_character_development_link"><i class="glyphicon glyphicon-list-alt"></i> Character dev.</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="code_character_development_view.php?filterer_code=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>" id="xs_code_character_development_link"><i class="glyphicon glyphicon-list-alt"></i> Character dev.</a>
+			<input type="hidden" id="code_character_development_hclink" value="code_character_development_view.php?filterer_code=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>">
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<hr>
+
+	<div class="row">
+		<!-- form inputs -->
+		<div class="col-md-8 col-lg-10" id="code_herme_dv_form">
+			<fieldset class="form-horizontal">
+
+				<div class="form-group">
+					<label for="id" class="control-label col-lg-3">id <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#id-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="id-description"><div class="alert alert-info">Use this for hermeneutic encoding, including dramaturgical and psychological analysis.<br></div></span>
+
+						<p class="form-control-static" id="id"><%%VALUE(id)%%></p>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="author" class="control-label col-lg-3">Author <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#author-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="author-description"><div class="alert alert-info">The author of the document.<br>If he or she does not exist in the "agent" table, an entrance has to be created first.</div></span>
+
+						<div class="row"><div class="col-xs-10"><%%COMBO(author)%%></div><div class="col-xs-1"><%%PLINK(author)%%></div></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="bibliography" class="control-label col-lg-3">Bibliography <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#bibliography-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="bibliography-description"><div class="alert alert-info">The document the text to be coded belongs to.</div></span>
+
+						<div class="row"><div class="col-xs-10"><%%COMBO(bibliography)%%></div><div class="col-xs-1"><%%PLINK(bibliography)%%></div></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="transcript" class="control-label col-lg-3">Transcript <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#transcript-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="transcript-description"><div class="alert alert-info">Chose the transcript version from the "transcript" table or introduce it, if missing.</div></span>
+
+						<div class="row"><div class="col-xs-10"><%%COMBO(transcript)%%></div><div class="col-xs-1"><%%PLINK(transcript)%%></div></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="token_sequence" class="control-label col-lg-3">Token sequence</label>
+					<div class="col-lg-9">
+						<div class="row"><div class="col-xs-10"><%%COMBO(token_sequence)%%></div><div class="col-xs-1"><%%PLINK(token_sequence)%%></div><div class="col-xs-1"><span id="token_sequenceLoading"></span></div></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="token" class="control-label col-lg-3">Token</label>
+					<div class="col-lg-9">
+						<p class="form-control-static" id="token"></p>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="impression" class="control-label col-lg-3">Impression management <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#impression-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="impression-description"><div class="alert alert-info">This the start of your coding. <br>Chose a category from Goffman-Burke's "impression management", if applicable.</div></span>
+
+						<div class="row"><div class="col-xs-10"><%%COMBO(impression)%%></div><div class="col-xs-1"><%%PLINK(impression)%%></div></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="noetictension" class="control-label col-lg-3">Noetic tension <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#noetictension-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="noetictension-description"><div class="alert alert-info">This the start of your coding. <br>Chose a category from Goffman-Burke's "impression management", if applicable.</div></span>
+
+						<div class="row"><div class="col-xs-10"><%%COMBO(noetictension)%%></div><div class="col-xs-1"><%%PLINK(noetictension)%%></div></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="freecode" class="control-label col-lg-3">Comment <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#freecode-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="freecode-description"><div class="alert alert-info">This is a free coding field for all kind of hermeneutic findings related to this text token.</div></span>
+
+						<input maxlength="" type="text" class="form-control" name="freecode" id="freecode" value="<%%VALUE(freecode)%%>">
+					</div>
+				</div>
+
+			</fieldset>
+		</div>
+
+		<!-- DV action buttons -->
+		<div class="col-md-4 col-lg-2" id="code_herme_dv_action_buttons">
+			<div class="btn-toolbar">
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%UPDATE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%DESELECT_BUTTON%%>
+					<%%DVPRINT_BUTTON%%>
+					<%%DELETE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%INSERT_BUTTON%%>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- child records -->
+	<hr>
+	<div class="row">
+		<div class="col-lg-10 col-lg-offset-1">
+			<div id="code_herme-children" class="children-tabs"></div>
+		</div>
+	</div>
+
+</div><!-- /div class="panel-body" -->
+	<script>
+		$j(function() {
+			var add_new_mode = (!$j('input[name=SelectedID]').val());
+			var embedded_mode = ($j('input[name=Embedded]').val() == 1);
+
+			$j('select, input[type=text], textarea').not(':disabled').eq(0).focus();
+			$j('form').eq(0).change(function(){
+				if($j(this).data('already_changed')) return;
+				if($j('#deselect').length) $j('#deselect').removeClass('btn-default').addClass('btn-warning').get(0).lastChild.data = " <%%TRANSLATION(Cancel)%%>";
+				$j(this).data('already_changed', true);
+			});
+
+			$j('a[href="<%%TRANSLATION(ImageFolder)%%>"]').click(function(){ return false; });
+
+			if(embedded_mode){
+				/* hide links to children tables in embedded mode */
+				$j('.detail_view a[id$=_link]').remove();
+
+				/* append embedded mode to all links */
+				var append_embedded = function(){
+					$j('a[href]:not([href^=#]):not([href^=javascript]):not([href$="Embedded=1"])').each(
+						function(){
+							$j(this).attr('href', $j(this).attr('href') + '&Embedded=1');
+						}
+					);
+				}
+				setTimeout(append_embedded, 500);
+				setTimeout(append_embedded, 1500);
+				setTimeout(append_embedded, 2500);
+				setTimeout(append_embedded, 3500);
+			}
+
+			/* when no record is selected ('add new' mode) */
+			if(add_new_mode){
+				/* hide links to children tables */
+				$j('.detail_view a[id$=_link]').remove();
+			}else{
+				post(
+					'parent-children.php', {
+						ParentTable: 'code_herme',
+						SelectedID: '<%%VALUE(id)%%>',
+						Operation: 'show-children'
+					},
+					'code_herme-children'
+				);
+			}
+		});
+	</script>

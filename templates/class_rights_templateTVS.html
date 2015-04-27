@@ -1,0 +1,5 @@
+<!-- Edit this file to change the layout of the highlighted record in the table view -->
+		<td id="class_rights-right-<%%VALUE(id)%%>" class=""><%%VALUE(right)%%></td>
+		<td id="class_rights-description-<%%VALUE(id)%%>" class=""><%%VALUE(description)%%></td>
+		<td id="class_rights-certification-<%%VALUE(id)%%>" class=""><a href="link.php?t=class_rights&f=certification&i=<%%VALUE(id)%%>" target="_blank" title="<%%VALUE(certification)%%>" class="btn btn-default"><i class="glyphicon glyphicon-globe text-info"></i></a></td>
+		<script>jQuery(function(){ var e_certification = '<%%VALUE(certification)%%>'; if(e_certification == '' || e_certification == '&nbsp;') jQuery('#class_rights-certification-<%%VALUE(id)%%>').html(''); });</script>

@@ -1,0 +1,17 @@
+<!-- Edit this file to change the layout of each record in the table view -->
+<!-- To disable clicking of a field, remove the <%%select%%> and <%%endselect%%> formatters around it-->
+
+<!-- If you wish to hide the table view header that contains the column titles, -->
+<!-- open the generated 'biblio_trascript_view.php' file in your text editor and -->
+<!-- change the value of $x->ShowTableHeader to 0 -->
+
+		<td id="biblio_trascript-author-<%%VALUE(id)%%>" class="biblio_trascript-author "><%%SELECT%%><%%VALUE(author)%%><%%ENDSELECT%%></td>
+		<td id="biblio_trascript-author_memberID-<%%VALUE(id)%%>" class="biblio_trascript-author_memberID "><%%SELECT%%><%%VALUE(author_memberID)%%><%%ENDSELECT%%></td>
+		<td id="biblio_trascript-bibliography_id-<%%VALUE(id)%%>" class="biblio_trascript-bibliography_id "><%%SELECT%%><%%VALUE(bibliography_id)%%><%%ENDSELECT%%></td>
+		<td id="biblio_trascript-bibliography_title-<%%VALUE(id)%%>" class="biblio_trascript-bibliography_title "><%%SELECT%%><%%VALUE(bibliography_title)%%><%%ENDSELECT%%></td>
+		<td id="biblio_trascript-trascriber_memberID-<%%VALUE(id)%%>" class="biblio_trascript-trascriber_memberID "><%%SELECT%%><%%VALUE(trascriber_memberID)%%><%%ENDSELECT%%></td>
+		<td id="biblio_trascript-transcript_title-<%%VALUE(id)%%>" class="biblio_trascript-transcript_title "><%%SELECT%%><%%VALUE(transcript_title)%%><%%ENDSELECT%%></td>
+		<td id="biblio_trascript-transcript-<%%VALUE(id)%%>" class="biblio_trascript-transcript "><a href="link.php?t=biblio_trascript&f=transcript&i=<%%VALUE(id)%%>" target="_blank" title="<%%VALUE(transcript)%%>" class="btn btn-default"><i class="glyphicon glyphicon-globe text-info"></i></a></td>
+		<td id="biblio_trascript-credits-<%%VALUE(id)%%>" class="biblio_trascript-credits "><a href="link.php?t=biblio_trascript&f=credits&i=<%%VALUE(id)%%>" target="_blank" title="<%%VALUE(credits)%%>" class="btn btn-default"><i class="glyphicon glyphicon-globe text-info"></i></a></td>
+		<script>jQuery(function(){ var e_transcript='<%%VALUE(transcript)%%>'; if(e_transcript=='' || e_transcript=='&nbsp;') jQuery('#biblio_trascript-transcript-<%%VALUE(id)%%>').html(''); });</script>
+		<script>jQuery(function(){ var e_credits='<%%VALUE(credits)%%>'; if(e_credits=='' || e_credits=='&nbsp;') jQuery('#biblio_trascript-credits-<%%VALUE(id)%%>').html(''); });</script>

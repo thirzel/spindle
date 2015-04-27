@@ -1,0 +1,13 @@
+<!-- Edit this file to change the layout of the highlighted record in the table view -->
+		<td id="biblio_doc-id-<%%VALUE(id)%%>" class="text-right"><%%VALUE(id)%%></td>
+		<td id="biblio_doc-img-<%%VALUE(id)%%>" class=""><a href="<%%TRANSLATION(ImageFolder)%%><%%VALUE(img)%%>" rel="lightbox"><img src="thumbnail.php?i=<%%VALUE(img)%%>&t=biblio_doc&f=img&v=tv" class="img-thumbnail"></a></td>
+		<td id="biblio_doc-author_name-<%%VALUE(id)%%>" class=""><%%VALUE(author_name)%%></td>
+		<td id="biblio_doc-published-<%%VALUE(id)%%>" class=""><%%VALUE(published)%%></td>
+		<td id="biblio_doc-title-<%%VALUE(id)%%>" class=""><%%VALUE(title)%%></td>
+		<td id="biblio_doc-publisher-<%%VALUE(id)%%>" class=""><%%VALUE(publisher)%%></td>
+		<td id="biblio_doc-location-<%%VALUE(id)%%>" class=""><%%VALUE(location)%%></td>
+		<td id="biblio_doc-pdf_book-<%%VALUE(id)%%>" class=""><a href="link.php?t=biblio_doc&f=pdf_book&i=<%%VALUE(id)%%>" target="_blank" title="<%%VALUE(pdf_book)%%>" class="btn btn-default"><i class="glyphicon glyphicon-globe text-info"></i></a></td>
+		<td id="biblio_doc-ext_source-<%%VALUE(id)%%>" class=""><a href="link.php?t=biblio_doc&f=ext_source&i=<%%VALUE(id)%%>" target="_blank" title="<%%VALUE(ext_source)%%>" class="btn btn-default"><i class="glyphicon glyphicon-globe text-info"></i></a></td>
+		<script>jQuery(function(){ var e_img = '<%%VALUE(img)%%>'; if(e_img == '' || e_img == '&nbsp;') jQuery('#biblio_doc-img-<%%VALUE(id)%%>').html(''); });</script>
+		<script>jQuery(function(){ var e_pdf_book = '<%%VALUE(pdf_book)%%>'; if(e_pdf_book == '' || e_pdf_book == '&nbsp;') jQuery('#biblio_doc-pdf_book-<%%VALUE(id)%%>').html(''); });</script>
+		<script>jQuery(function(){ var e_ext_source = '<%%VALUE(ext_source)%%>'; if(e_ext_source == '' || e_ext_source == '&nbsp;') jQuery('#biblio_doc-ext_source-<%%VALUE(id)%%>').html(''); });</script>

@@ -1,0 +1,287 @@
+<!-- Edit this file to change the layout of the detail view form -->
+
+<a name="detail-view"></a>
+<div class="panel-heading"><h3 class="panel-title"><strong><%%DETAIL_VIEW_TITLE%%></strong></h3></div>
+
+<div class="panel-body" id="code_encounters_dv_container">
+	<!-- child links -->
+	<div class="row">
+		<div class="col-xs-12">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="storylines_view.php?filterer_characterevent_scene=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>" id="storylines_link"><i class="glyphicon glyphicon-list-alt"></i> Storylines</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="storylines_view.php?filterer_characterevent_scene=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>" id="xs_storylines_link"><i class="glyphicon glyphicon-list-alt"></i> Storylines</a>
+			<input type="hidden" id="storylines_hclink" value="storylines_view.php?filterer_characterevent_scene=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>">
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<hr>
+
+	<div class="row">
+		<!-- form inputs -->
+		<div class="col-md-8 col-lg-10" id="code_encounters_dv_form">
+			<fieldset class="form-horizontal">
+
+				<div class="form-group">
+					<label for="id" class="control-label col-lg-3">id <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#id-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="id-description"><div class="alert alert-info">This is a key table. <br>Good Grand Argument Stories (GAS) are made up of series of encounters.<br>You will match, here, different view points or experiences of two agents.</div></span>
+
+						<p class="form-control-static" id="id"><%%VALUE(id)%%></p>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="agentA" class="control-label col-lg-3">Agent A <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#agentA-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="agentA-description"><div class="alert alert-info">This is the person who experiences the event.</div></span>
+
+						<div class="row"><div class="col-xs-10"><%%COMBO(agentA)%%></div><div class="col-xs-1"><%%PLINK(agentA)%%></div></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="authorA" class="control-label col-lg-3">Author A <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#authorA-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="authorA-description"><div class="alert alert-info">This is the person who writes about the event.<br>It must not necessarily be the same as the agent.</div></span>
+
+						<div class="row"><div class="col-xs-10"><%%COMBO(authorA)%%></div><div class="col-xs-1"><%%PLINK(authorA)%%></div></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="bibliographyA" class="control-label col-lg-3">Bibliography A</label>
+					<div class="col-lg-9">
+						<div class="row"><div class="col-xs-10"><%%COMBO(bibliographyA)%%></div><div class="col-xs-1"><%%PLINK(bibliographyA)%%></div></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="transcriptA" class="control-label col-lg-3">Transcript A</label>
+					<div class="col-lg-9">
+						<div class="row"><div class="col-xs-10"><%%COMBO(transcriptA)%%></div><div class="col-xs-1"><%%PLINK(transcriptA)%%></div></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="tokenA" class="control-label col-lg-3">Token A</label>
+					<div class="col-lg-9">
+						<div class="row"><div class="col-xs-10"><%%COMBO(tokenA)%%></div><div class="col-xs-1"><%%PLINK(tokenA)%%></div></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="sceneA" class="control-label col-lg-3">Scene A</label>
+					<div class="col-lg-9">
+						<div class="row"><div class="col-xs-10"><%%COMBO(sceneA)%%></div><div class="col-xs-1"><%%PLINK(sceneA)%%></div></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="agentB" class="control-label col-lg-3">Agent B <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#agentB-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="agentB-description"><div class="alert alert-info">This is the person who experiences the event.</div></span>
+
+						<div class="row"><div class="col-xs-10"><%%COMBO(agentB)%%></div><div class="col-xs-1"><%%PLINK(agentB)%%></div></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="authorB" class="control-label col-lg-3">Author B <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#authorB-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="authorB-description"><div class="alert alert-info">This is the person who writes about the event.<br>It must not necessarily be the same as the agent.</div></span>
+
+						<div class="row"><div class="col-xs-10"><%%COMBO(authorB)%%></div><div class="col-xs-1"><%%PLINK(authorB)%%></div></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="bibliographyB" class="control-label col-lg-3">Bibliography B</label>
+					<div class="col-lg-9">
+						<div class="row"><div class="col-xs-10"><%%COMBO(bibliographyB)%%></div><div class="col-xs-1"><%%PLINK(bibliographyB)%%></div></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="transcriptB" class="control-label col-lg-3">Transcript B</label>
+					<div class="col-lg-9">
+						<div class="row"><div class="col-xs-10"><%%COMBO(transcriptB)%%></div><div class="col-xs-1"><%%PLINK(transcriptB)%%></div></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="tokenB" class="control-label col-lg-3">Token B</label>
+					<div class="col-lg-9">
+						<div class="row"><div class="col-xs-10"><%%COMBO(tokenB)%%></div><div class="col-xs-1"><%%PLINK(tokenB)%%></div></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="sceneB" class="control-label col-lg-3">Scene B</label>
+					<div class="col-lg-9">
+						<div class="row"><div class="col-xs-10"><%%COMBO(sceneB)%%></div><div class="col-xs-1"><%%PLINK(sceneB)%%></div></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="type" class="control-label col-lg-3">Interaction type <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#type-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="type-description"><div class="alert alert-info">This referes to Dramatica's interaction types.</div></span>
+
+						<%%COMBO(type)%%>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="conflicttype" class="control-label col-lg-3">Conflict type <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#conflicttype-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="conflicttype-description"><div class="alert alert-info">This refers to Dramatica's conflict types.<br><br>See: http://narrativefirst.com/articles/series/conflict</div></span>
+
+						<%%COMBO(conflicttype)%%>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="story_scene" class="control-label col-lg-3">Story Scene <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#story_scene-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="story_scene-description"><div class="alert alert-info">Set up a scene that describes the encounter of both events in the separate table.</div></span>
+
+						<div class="row"><div class="col-xs-10"><%%COMBO(story_scene)%%></div><div class="col-xs-1"><%%PLINK(story_scene)%%></div></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="nd_color" class="control-label col-lg-3">nd_color <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#nd_color-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="nd_color-description"><div class="alert alert-info">This and the following fields are for use in the NodeXL Network Graph template:<br>http://nodexl.codeplex.com/<br>You can directly us them by downloading the table as CSV-file and uploading or copy pasting it into the NodeXL template.</div></span>
+
+						<input maxlength="10" type="text" class="form-control" name="nd_color" id="nd_color" value="<%%VALUE(nd_color)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="nd_width" class="control-label col-lg-3">nd_width</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="nd_width" id="nd_width" value="<%%VALUE(nd_width)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="nd_style" class="control-label col-lg-3">nd_style</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="nd_style" id="nd_style" value="<%%VALUE(nd_style)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="nd_opacity" class="control-label col-lg-3">nd_opacity</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="nd_opacity" id="nd_opacity" value="<%%VALUE(nd_opacity)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="nd_visibility" class="control-label col-lg-3">nd_visibility</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="nd_visibility" id="nd_visibility" value="<%%VALUE(nd_visibility)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="lbl_lable" class="control-label col-lg-3">lbl_lable</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="lbl_lable" id="lbl_lable" value="<%%VALUE(lbl_lable)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="lbl_color" class="control-label col-lg-3">lbl_color</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="lbl_color" id="lbl_color" value="<%%VALUE(lbl_color)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="lbl_size" class="control-label col-lg-3">lbl_size</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="lbl_size" id="lbl_size" value="<%%VALUE(lbl_size)%%>">
+					</div>
+				</div>
+
+			</fieldset>
+		</div>
+
+		<!-- DV action buttons -->
+		<div class="col-md-4 col-lg-2" id="code_encounters_dv_action_buttons">
+			<div class="btn-toolbar">
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%UPDATE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%DESELECT_BUTTON%%>
+					<%%DVPRINT_BUTTON%%>
+					<%%DELETE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%INSERT_BUTTON%%>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- child records -->
+	<hr>
+	<div class="row">
+		<div class="col-lg-10 col-lg-offset-1">
+			<div id="code_encounters-children" class="children-tabs"></div>
+		</div>
+	</div>
+
+</div><!-- /div class="panel-body" -->
+	<script>
+		$j(function() {
+			var add_new_mode = (!$j('input[name=SelectedID]').val());
+			var embedded_mode = ($j('input[name=Embedded]').val() == 1);
+
+			$j('select, input[type=text], textarea').not(':disabled').eq(0).focus();
+			$j('form').eq(0).change(function(){
+				if($j(this).data('already_changed')) return;
+				if($j('#deselect').length) $j('#deselect').removeClass('btn-default').addClass('btn-warning').get(0).lastChild.data = " <%%TRANSLATION(Cancel)%%>";
+				$j(this).data('already_changed', true);
+			});
+
+			$j('a[href="<%%TRANSLATION(ImageFolder)%%>"]').click(function(){ return false; });
+
+			if(embedded_mode){
+				/* hide links to children tables in embedded mode */
+				$j('.detail_view a[id$=_link]').remove();
+
+				/* append embedded mode to all links */
+				var append_embedded = function(){
+					$j('a[href]:not([href^=#]):not([href^=javascript]):not([href$="Embedded=1"])').each(
+						function(){
+							$j(this).attr('href', $j(this).attr('href') + '&Embedded=1');
+						}
+					);
+				}
+				setTimeout(append_embedded, 500);
+				setTimeout(append_embedded, 1500);
+				setTimeout(append_embedded, 2500);
+				setTimeout(append_embedded, 3500);
+			}
+
+			/* when no record is selected ('add new' mode) */
+			if(add_new_mode){
+				/* hide links to children tables */
+				$j('.detail_view a[id$=_link]').remove();
+			}else{
+				post(
+					'parent-children.php', {
+						ParentTable: 'code_encounters',
+						SelectedID: '<%%VALUE(id)%%>',
+						Operation: 'show-children'
+					},
+					'code_encounters-children'
+				);
+			}
+		});
+	</script>

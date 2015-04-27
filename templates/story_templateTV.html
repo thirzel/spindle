@@ -1,0 +1,12 @@
+<!-- Edit this file to change the layout of each record in the table view -->
+<!-- To disable clicking of a field, remove the <%%select%%> and <%%endselect%%> formatters around it-->
+
+<!-- If you wish to hide the table view header that contains the column titles, -->
+<!-- open the generated 'story_view.php' file in your text editor and -->
+<!-- change the value of $x->ShowTableHeader to 0 -->
+
+		<td id="story-id-<%%VALUE(id)%%>" class="story-id text-right"><%%SELECT%%><%%VALUE(id)%%><%%ENDSELECT%%></td>
+		<td id="story-subject-<%%VALUE(id)%%>" class="story-subject "><%%SELECT%%><%%VALUE(subject)%%><%%ENDSELECT%%></td>
+		<td id="story-story-<%%VALUE(id)%%>" class="story-story "><%%SELECT%%><%%VALUE(story)%%><%%ENDSELECT%%></td>
+		<td id="story-tags-<%%VALUE(id)%%>" class="story-tags "><%%SELECT%%><%%VALUE(tags)%%><%%ENDSELECT%%></td>
+		<td id="story-collaboration_status-<%%VALUE(id)%%>" class="story-collaboration_status "><%%SELECT%%><%%VALUE(collaboration_status)%%><%%ENDSELECT%%></td>

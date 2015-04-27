@@ -1,0 +1,167 @@
+<!-- Edit this file to change the layout of the detail view form -->
+
+<a name="detail-view"></a>
+<div class="panel-heading"><h3 class="panel-title"><strong><%%DETAIL_VIEW_TITLE%%></strong></h3></div>
+
+<div class="panel-body" id="storylines_dv_container">
+	<!-- child links -->
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<hr>
+
+	<div class="row">
+		<!-- form inputs -->
+		<div class="col-md-8 col-lg-10" id="storylines_dv_form">
+			<fieldset class="form-horizontal">
+
+				<div class="form-group">
+					<label for="id" class="control-label col-lg-3">Storyline no. <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#id-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="id-description"><div class="alert alert-info">This is the heart of your creative writing.<br>Here all the text of your story is associated to the different levels of encoding, <br>related to agents converted into story characters, ordered and sequenced.<br><br>If you have encoded the "encounter scenes" as a script,<br> you can download the whole story here, as a CSV-file<br>and upload to the free software Page2Stage for further editing:<br>http://www.page2stage.com/</div></span>
+
+						<p class="form-control-static" id="id"><%%VALUE(id)%%></p>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="story" class="control-label col-lg-3">Story <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#story-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="story-description"><div class="alert alert-info">The title of your story.</div></span>
+
+						<div class="row"><div class="col-xs-10"><%%COMBO(story)%%></div><div class="col-xs-1"><%%PLINK(story)%%></div></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="story_act" class="control-label col-lg-3">Act/Chapter <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#story_act-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="story_act-description"><div class="alert alert-info">You can structure you story according to acts or chapters here.</div></span>
+
+						<%%COMBO(story_act)%%>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="storyweaving_scene_no" class="control-label col-lg-3">Storyweaving scene no. <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#storyweaving_scene_no-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="storyweaving_scene_no-description"><div class="alert alert-info">This number refers to the storylines position on the structural grid.</div></span>
+
+						<div class="row"><div class="col-xs-10"><%%COMBO(storyweaving_scene_no)%%></div><div class="col-xs-1"><%%PLINK(storyweaving_scene_no)%%></div><div class="col-xs-1"><span id="storyweaving_scene_noLoading"></span></div></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="storyweaving_scene" class="control-label col-lg-3">Storyweaving scene <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#storyweaving_scene-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="storyweaving_scene-description"><div class="alert alert-info">This is the structural information related to this storyline.</div></span>
+
+						<p class="form-control-static" id="storyweaving_scene"></p>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="storyweaving_sequence" class="control-label col-lg-3">Sequence</label>
+					<div class="col-lg-9">
+						<p class="form-control-static" id="storyweaving_sequence"></p>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="storyweaving_theme" class="control-label col-lg-3">Theme</label>
+					<div class="col-lg-9">
+						<p class="form-control-static" id="storyweaving_theme"></p>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="role" class="control-label col-lg-3">Role</label>
+					<div class="col-lg-9">
+						<div class="row"><div class="col-xs-10"><%%COMBO(role)%%></div><div class="col-xs-1"><%%PLINK(role)%%></div></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="character" class="control-label col-lg-3">Character</label>
+					<div class="col-lg-9">
+						<div class="row"><div class="col-xs-10"><%%COMBO(character)%%></div><div class="col-xs-1"><%%PLINK(character)%%></div></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="characterevent_scene" class="control-label col-lg-3">Encounter <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#characterevent_scene-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="characterevent_scene-description"><div class="alert alert-info">This is the event of encounter related to the storyline.</div></span>
+
+						<div class="row"><div class="col-xs-10"><%%COMBO(characterevent_scene)%%></div><div class="col-xs-1"><%%PLINK(characterevent_scene)%%></div><div class="col-xs-1"><span id="characterevent_sceneLoading"></span></div></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="character_event" class="control-label col-lg-3">Character scene <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#character_event-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="character_event-description"><div class="alert alert-info">This is a comparison of the character scenes.</div></span>
+
+						<p class="form-control-static" id="character_event"></p>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="storyline_no" class="control-label col-lg-3">Scene no. <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#storyline_no-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="storyline_no-description"><div class="alert alert-info">Use this field to sequence the storylines in the right order and/or associate them to a scene.</div></span>
+
+						<input maxlength="40" type="text" class="form-control" name="storyline_no" id="storyline_no" value="<%%VALUE(storyline_no)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="storyline" class="control-label col-lg-3">Storyline <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#storyline-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="storyline-description"><div class="alert alert-info">This is a single storyline in your script.</div></span>
+
+						<textarea class="form-control" name="storyline" id="storyline" rows="5"><%%VALUE(storyline)%%></textarea>
+					</div>
+				</div>
+
+			</fieldset>
+		</div>
+
+		<!-- DV action buttons -->
+		<div class="col-md-4 col-lg-2" id="storylines_dv_action_buttons">
+			<div class="btn-toolbar">
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%UPDATE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%DESELECT_BUTTON%%>
+					<%%DVPRINT_BUTTON%%>
+					<%%DELETE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%INSERT_BUTTON%%>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</div><!-- /div class="panel-body" -->
+	<script>
+		$j(function() {
+			var add_new_mode = (!$j('input[name=SelectedID]').val());
+			var embedded_mode = ($j('input[name=Embedded]').val() == 1);
+
+			$j('select, input[type=text], textarea').not(':disabled').eq(0).focus();
+			$j('form').eq(0).change(function(){
+				if($j(this).data('already_changed')) return;
+				if($j('#deselect').length) $j('#deselect').removeClass('btn-default').addClass('btn-warning').get(0).lastChild.data = " <%%TRANSLATION(Cancel)%%>";
+				$j(this).data('already_changed', true);
+			});
+
+			$j('a[href="<%%TRANSLATION(ImageFolder)%%>"]').click(function(){ return false; });
+
+		});
+	</script>

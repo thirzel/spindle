@@ -1,0 +1,124 @@
+<!-- Edit this file to change the layout of the detail view print preview page -->
+
+
+<div class="panel-heading"><h3 class="panel-title">
+	<strong><%%DETAIL_VIEW_TITLE%%></strong>
+	<div class="hidden-print pull-right">
+		<button type="button" id="print" onclick="window.print();" title="<%%TRANSLATION(Print)%%>" class="btn btn-success"><i class="glyphicon glyphicon-print"></i></button>
+		<button type="submit" id="back" title="<%%TRANSLATION(Back)%%>" class="btn btn-warning"><i class="glyphicon glyphicon-remove"></i></button>
+	</div>
+	<div class="clearfix"></div>
+</h3></div>
+
+<div class="panel-body">
+	<fieldset class="form-horizontal">
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">id</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><%%VALUE(id)%%></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Author</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><span id="author<%%RND1%%>"><%%COMBOTEXT(author)%%></span></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Bibliography</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><span id="bibliography<%%RND1%%>"><%%COMBOTEXT(bibliography)%%></span></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Transcript</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><span id="transcript<%%RND1%%>"><%%COMBOTEXT(transcript)%%></span></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Token sequence</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><span id="token_sequence<%%RND1%%>"><%%COMBOTEXT(token_sequence)%%></span></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Token</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><span id="token<%%RND1%%>"></span></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Agent</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><span id="agent<%%RND1%%>"><%%COMBOTEXT(agent)%%></span></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Invivo code</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><span id="invivo_code<%%RND1%%>"><%%COMBOTEXT(invivo_code)%%></span></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Start date</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><span id="startdate<%%RND1%%>"></span></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">End date</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><span id="end_date<%%RND1%%>"></span></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Person(s)</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><span id="person<%%RND1%%>"></span></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Place(s)</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><span id="place<%%RND1%%>"></span></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Freecode</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><span id="freecode<%%RND1%%>"></span></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Hermeneutic code</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><span id="herme_code<%%RND1%%>"><%%COMBOTEXT(herme_code)%%></span></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Impression</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><span id="impression<%%RND1%%>"></span></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Noetic tension</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><span id="noetictension<%%RND1%%>"></span></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Comment</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><span id="comment<%%RND1%%>"></span></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Scene</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><span id="scene<%%RND1%%>"><%%COMBOTEXT(scene)%%></span></p>
+			</div>
+		</div>
+	</fieldset>
+</div>

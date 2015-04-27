@@ -1,0 +1,342 @@
+<!-- Edit this file to change the layout of the detail view form -->
+
+<a name="detail-view"></a>
+<div class="panel-heading"><h3 class="panel-title"><strong><%%DETAIL_VIEW_TITLE%%></strong></h3></div>
+
+<div class="panel-body" id="biblio_doc_dv_container">
+	<!-- child links -->
+	<div class="row">
+		<div class="col-xs-12">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="biblio_trascript_view.php?filterer_bibliography_title=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>" id="biblio_trascript_link"><i class="glyphicon glyphicon-list-alt"></i> Trascripts</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="biblio_trascript_view.php?filterer_bibliography_title=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>" id="xs_biblio_trascript_link"><i class="glyphicon glyphicon-list-alt"></i> Trascripts</a>
+			<input type="hidden" id="biblio_trascript_hclink" value="biblio_trascript_view.php?filterer_bibliography_title=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>">
+			<input type="hidden" id="biblio_token_hclink" value="biblio_token_view.php?filterer_bibliography=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>">
+			<input type="hidden" id="code_invivo_hclink" value="code_invivo_view.php?filterer_bibliography=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>">
+			<input type="hidden" id="code_herme_hclink" value="code_herme_view.php?filterer_bibliography=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>">
+			<input type="hidden" id="code_chrev_scenes_hclink" value="code_chrev_scenes_view.php?filterer_bibliography=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>">
+			<input type="hidden" id="code_character_development_hclink" value="code_character_development_view.php?filterer_bibliography=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>">
+			<input type="hidden" id="code_encounters_hclink" value="code_encounters_view.php?filterer_bibliographyA=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>">
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<hr>
+
+	<div class="row">
+		<!-- form inputs -->
+		<div class="col-md-8 col-lg-10" id="biblio_doc_dv_form">
+			<fieldset class="form-horizontal">
+
+				<div class="form-group">
+					<label for="id" class="control-label col-lg-3">id</label>
+					<div class="col-lg-9">
+						<p class="form-control-static" id="id"><%%VALUE(id)%%></p>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="img" class="control-label col-lg-3">Img <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#img-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="img-description"><div class="alert alert-info">Use this field to upload a cover picture.<br><br>Maximum file size allowed: 100 KB.<br>Allowed file types: jpg, jpeg, gif, png</div></span>
+
+						<div class="row"><div class="col-md-8">
+
+						<a href="<%%TRANSLATION(ImageFolder)%%><%%VALUE(img)%%>" rel="lightbox[biblio_doc_dv]"><img src="thumbnail.php?i=<%%VALUE(img)%%>&t=biblio_doc&f=img&v=dv" class="img-thumbnail"></a>
+</div>
+
+												<div class="col-md-4">
+							<%%UPLOADFILE(img)%%>
+							<%%REMOVEFILE(img)%%>
+						</div>
+					</div>
+
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="author_name" class="control-label col-lg-3">Author name <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#author_name-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="author_name-description"><div class="alert alert-info">The author of the document.</div></span>
+
+						<div class="row"><div class="col-xs-10"><%%COMBO(author_name)%%></div><div class="col-xs-1"><%%PLINK(author_name)%%></div><div class="col-xs-1"><span id="author_nameLoading"></span></div></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="author_id" class="control-label col-lg-3">Author id</label>
+					<div class="col-lg-9">
+						<p class="form-control-static" id="author_id"></p>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="type" class="control-label col-lg-3">Document type <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#type-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="type-description"><div class="alert alert-info">Authentic: for documents written by and about the same author.<br>Primary: for primary sources, written by contemporaries of the described events.<br>Secondary: for sources, written by authors living after an event.</div></span>
+
+						<div class="row"><div class="col-xs-10"><%%COMBO(type)%%></div><div class="col-xs-1"><%%PLINK(type)%%></div></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="genre" class="control-label col-lg-3">Genre <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#genre-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="genre-description"><div class="alert alert-info">Chose a genre that describes the document.</div></span>
+
+						<div class="row"><div class="col-xs-10"><%%COMBO(genre)%%></div><div class="col-xs-1"><%%PLINK(genre)%%></div></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="created" class="control-label col-lg-3">Created <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#created-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="created-description"><div class="alert alert-info">Approximate date of text production.<br><br>Format: YYYY-MM-DD hh:mm:ss</div></span>
+
+						<input maxlength="" type="text" class="form-control" name="created" id="created" value="<%%VALUE(created)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="published" class="control-label col-lg-3">Published <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#published-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="published-description"><div class="alert alert-info">If the document was not published, leave this free.<br><br>Format: YYYY-MM-DD hh:mm:ss</div></span>
+
+						<input maxlength="" type="text" class="form-control" name="published" id="published" value="<%%VALUE(published)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="title" class="control-label col-lg-3">Title</label>
+					<div class="col-lg-9">
+						<input maxlength="" type="text" class="form-control" name="title" id="title" value="<%%VALUE(title)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="subtitle" class="control-label col-lg-3">Subtitle</label>
+					<div class="col-lg-9">
+						<input maxlength="" type="text" class="form-control" name="subtitle" id="subtitle" value="<%%VALUE(subtitle)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="publisher" class="control-label col-lg-3">Publisher</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="publisher" id="publisher" value="<%%VALUE(publisher)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="location" class="control-label col-lg-3">Place of publication</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="location" id="location" value="<%%VALUE(location)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="citation" class="control-label col-lg-3">Citation <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#citation-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="citation-description"><div class="alert alert-info">Use this field for the full APA-style citation.</div></span>
+
+						<textarea class="form-control" name="citation" id="citation" rows="5"><%%VALUE(citation)%%></textarea>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="description" class="control-label col-lg-3">Description <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#description-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="description-description"><div class="alert alert-info">Use this field according to the MulDiCat "description".</div></span>
+
+						<input maxlength="" type="text" class="form-control" name="description" id="description" value="<%%VALUE(description)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="source" class="control-label col-lg-3">Source</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="source" id="source" value="<%%VALUE(source)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="medium" class="control-label col-lg-3">Medium</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="medium" id="medium" value="<%%VALUE(medium)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="language" class="control-label col-lg-3">Language</label>
+					<div class="col-lg-9">
+						<div class="row"><div class="col-xs-10"><%%COMBO(language)%%></div><div class="col-xs-1"><%%PLINK(language)%%></div></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="format" class="control-label col-lg-3">Format</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="format" id="format" value="<%%VALUE(format)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="subject" class="control-label col-lg-3">Subject <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#subject-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="subject-description"><div class="alert alert-info">Write in a few words, what the document is about.</div></span>
+
+						<input maxlength="" type="text" class="form-control" name="subject" id="subject" value="<%%VALUE(subject)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="rights" class="control-label col-lg-3">Rights</label>
+					<div class="col-lg-9">
+						<div class="row"><div class="col-xs-10"><%%COMBO(rights)%%></div><div class="col-xs-1"><%%PLINK(rights)%%></div></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="rights_holder" class="control-label col-lg-3">Rights holder <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#rights_holder-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="rights_holder-description"><div class="alert alert-info">Write the name of the person or company holding the rights in the way they are given.</div></span>
+
+						<input maxlength="255" type="text" class="form-control" name="rights_holder" id="rights_holder" value="<%%VALUE(rights_holder)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="data_evaluation" class="control-label col-lg-3">Data evaluation <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#data_evaluation-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="data_evaluation-description"><div class="alert alert-info">If some data are still uncertain mark "none".<br>Otherwise indicate who gives credit for the data validation.<br>If you checked the data with other data it's "self-evaluation".<br>If you are revising the agent's data introduced by someone else, mark "peer review",<br>If an authority control number exists, mark authority control, <br>but only in the case all data are confirmed by this institution.</div></span>
+
+						<%%COMBO(data_evaluation)%%>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="authority_record" class="control-label col-lg-3">Authority records <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#authority_record-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="authority_record-description"><div class="alert alert-info">The authority number.</div></span>
+
+						<input maxlength="255" type="text" class="form-control" name="authority_record" id="authority_record" value="<%%VALUE(authority_record)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="authority_organization" class="control-label col-lg-3">Authority organization <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#authority_organization-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="authority_organization-description"><div class="alert alert-info">Chose the authority organization which gives credit to the data.</div></span>
+
+						<div class="row"><div class="col-xs-10"><%%COMBO(authority_organization)%%></div><div class="col-xs-1"><%%PLINK(authority_organization)%%></div></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="pdf_book" class="control-label col-lg-3">Pdf book <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#pdf_book-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="pdf_book-description"><div class="alert alert-info">Upload the orginal, if available and allowed according the rights.<br><br>Maximum file size allowed: 90000 KB.<br>Allowed file types: txt, doc, docx, docm, odt, pdf, rtf</div></span>
+
+						
+						<p class="form-control-static">
+							<a id="pdf_book-link" href="link.php?t=biblio_doc&f=pdf_book&i=<%%VALUE(id)%%>" target="_blank"><i class="glyphicon glyphicon-globe" title="<%%VALUE(pdf_book)%%>"></i></a>
+						</p>
+						<script>jQuery(function(){ var e_pdf_book = '<%%VALUE(pdf_book)%%>'; if(e_pdf_book == '' || e_pdf_book == '&nbsp;' || e_pdf_book == 'blank.gif') jQuery('#pdf_book-link').hide(); });</script>						<div class="col-md-4">
+							<%%UPLOADFILE(pdf_book)%%>
+							<%%REMOVEFILE(pdf_book)%%>
+						</div>
+
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="ext_source" class="control-label col-lg-3">External source <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#ext_source-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="ext_source-description"><div class="alert alert-info">Link to an online source of the document.</div></span>
+
+						
+						<p class="form-control-static">
+							<a id="ext_source-link" href="link.php?t=biblio_doc&f=ext_source&i=<%%VALUE(id)%%>" target="_blank"><i class="glyphicon glyphicon-globe" title="<%%VALUE(ext_source)%%>"></i></a>
+							<label for="ext_source"><button type="button" id="ext_source-edit-link" class="btn btn-default hspacer-lg vspacer-sm" data-toggle="collapse" data-target="#ext_source" title="<%%TRANSLATION(Edit)%%>"><i class="glyphicon glyphicon-pencil"></i></button></label>
+						</p>
+						<script>jQuery(function(){ var e_ext_source = '<%%VALUE(ext_source)%%>'; if(e_ext_source == '' || e_ext_source == '&nbsp;' || e_ext_source == 'blank.gif') jQuery('#ext_source-link').hide(); });</script><input maxlength="255" type="text" class="form-control collapse" name="ext_source" id="ext_source" value="<%%VALUE(ext_source)%%>">
+					</div>
+				</div>
+
+			</fieldset>
+		</div>
+
+		<!-- DV action buttons -->
+		<div class="col-md-4 col-lg-2" id="biblio_doc_dv_action_buttons">
+			<div class="btn-toolbar">
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%UPDATE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%DESELECT_BUTTON%%>
+					<%%DVPRINT_BUTTON%%>
+					<%%DELETE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%INSERT_BUTTON%%>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- child records -->
+	<hr>
+	<div class="row">
+		<div class="col-lg-10 col-lg-offset-1">
+			<div id="biblio_doc-children" class="children-tabs"></div>
+		</div>
+	</div>
+
+</div><!-- /div class="panel-body" -->
+	<script>
+		$j(function() {
+			var add_new_mode = (!$j('input[name=SelectedID]').val());
+			var embedded_mode = ($j('input[name=Embedded]').val() == 1);
+
+			$j('select, input[type=text], textarea').not(':disabled').eq(0).focus();
+			$j('form').eq(0).change(function(){
+				if($j(this).data('already_changed')) return;
+				if($j('#deselect').length) $j('#deselect').removeClass('btn-default').addClass('btn-warning').get(0).lastChild.data = " <%%TRANSLATION(Cancel)%%>";
+				$j(this).data('already_changed', true);
+			});
+
+			$j('a[href="<%%TRANSLATION(ImageFolder)%%>"]').click(function(){ return false; });
+
+			if(embedded_mode){
+				/* hide links to children tables in embedded mode */
+				$j('.detail_view a[id$=_link]').remove();
+
+				/* append embedded mode to all links */
+				var append_embedded = function(){
+					$j('a[href]:not([href^=#]):not([href^=javascript]):not([href$="Embedded=1"])').each(
+						function(){
+							$j(this).attr('href', $j(this).attr('href') + '&Embedded=1');
+						}
+					);
+				}
+				setTimeout(append_embedded, 500);
+				setTimeout(append_embedded, 1500);
+				setTimeout(append_embedded, 2500);
+				setTimeout(append_embedded, 3500);
+			}
+
+			/* when no record is selected ('add new' mode) */
+			if(add_new_mode){
+				/* hide links to children tables */
+				$j('.detail_view a[id$=_link]').remove();
+			}else{
+				post(
+					'parent-children.php', {
+						ParentTable: 'biblio_doc',
+						SelectedID: '<%%VALUE(id)%%>',
+						Operation: 'show-children'
+					},
+					'biblio_doc-children'
+				);
+			}
+		});
+	</script>

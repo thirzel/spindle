@@ -1,0 +1,352 @@
+<!-- Edit this file to change the layout of the detail view form -->
+
+<a name="detail-view"></a>
+<div class="panel-heading"><h3 class="panel-title"><strong><%%DETAIL_VIEW_TITLE%%></strong></h3></div>
+
+<div class="panel-body" id="story_characters_dv_container">
+	<!-- child links -->
+	<div class="row">
+		<div class="col-xs-12">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="code_character_development_view.php?filterer_agent=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>" id="code_character_development_link"><i class="glyphicon glyphicon-list-alt"></i> Character dev.</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="code_character_development_view.php?filterer_agent=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>" id="xs_code_character_development_link"><i class="glyphicon glyphicon-list-alt"></i> Character dev.</a>
+			<input type="hidden" id="code_character_development_hclink" value="code_character_development_view.php?filterer_agent=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>">
+			<input type="hidden" id="storylines_hclink" value="storylines_view.php?filterer_character=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>">
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<hr>
+
+	<div class="row">
+		<!-- form inputs -->
+		<div class="col-md-8 col-lg-10" id="story_characters_dv_form">
+			<fieldset class="form-horizontal">
+
+				<div class="form-group">
+					<label for="id" class="control-label col-lg-3">id <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#id-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="id-description"><div class="alert alert-info">Chose the characters which appear in your story, here.</div></span>
+
+						<p class="form-control-static" id="id"><%%VALUE(id)%%></p>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="story" class="control-label col-lg-3">Story <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#story-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="story-description"><div class="alert alert-info">Chose the story the character relates to.</div></span>
+
+						<div class="row"><div class="col-xs-10"><%%COMBO(story)%%></div><div class="col-xs-1"><%%PLINK(story)%%></div></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="role" class="control-label col-lg-3">Role <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#role-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="role-description"><div class="alert alert-info">Role refers to the role in your narrative.<br>You can chose one out of the eight archetypes from Dramatica,<br>or build a secondary character role.</div></span>
+
+						<div class="row"><div class="col-xs-10"><%%COMBO(role)%%></div><div class="col-xs-1"><%%PLINK(role)%%></div></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="character" class="control-label col-lg-3">Character type <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#character-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="character-description"><div class="alert alert-info">Character refers to the structural function of the charater in the narration.<br>Special functions, according to Dramatica are "Main Character" and "Impact Character".<br>Any archetype can be chosen for these. All further archetypes are then considered "Additional Characters".<br>If you have build characters which are not any of the archetypes, they should be considered "Secondary Characters".</div></span>
+
+						<%%COMBO(character)%%>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="memberID" class="control-label col-lg-3">Agent</label>
+					<div class="col-lg-9">
+						<p class="form-control-static"><span id="memberID"><%%COMBOTEXT(memberID)%%></span> <%%PLINK(memberID)%%></p>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="agent_name" class="control-label col-lg-3">Agent's name <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#agent_name-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="agent_name-description"><div class="alert alert-info">This is the character's real name.</div></span>
+
+						<div class="row"><div class="col-xs-10"><%%COMBO(agent_name)%%></div><div class="col-xs-1"><%%PLINK(agent_name)%%></div><div class="col-xs-1"><span id="agent_nameLoading"></span></div></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="cw_name" class="control-label col-lg-3">Character name <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#cw_name-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="cw_name-description"><div class="alert alert-info">Many persons have names which are known under several variations, difficult to spell or pronounce, <br>or should not be revealed within your narrative for dramatic considerations. <br>Please, chose here the name which will be used for the person all over the narrative.</div></span>
+
+						<input maxlength="40" type="text" class="form-control" name="cw_name" id="cw_name" value="<%%VALUE(cw_name)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="img" class="control-label col-lg-3">Image <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#img-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="img-description"><div class="alert alert-info">If you have set an image for the agent in the "agent" table, it will appear here.</div></span>
+
+						<p class="form-control-static" id="img"></p>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="MC_resolve" class="control-label col-lg-3">Character resolve <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#MC_resolve-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="MC_resolve-description"><div class="alert alert-info">This is part of the Dramatica structure and belongs to the "static storypoints".</div></span>
+
+						<%%COMBO(MC_resolve)%%>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="MC_growth" class="control-label col-lg-3">Character growth <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#MC_growth-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="MC_growth-description"><div class="alert alert-info">This is part of the Dramatica structure and belongs to the "static storypoints".</div></span>
+
+						<%%COMBO(MC_growth)%%>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="MC_approach" class="control-label col-lg-3">Character approach <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#MC_approach-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="MC_approach-description"><div class="alert alert-info">This is part of the Dramatica structure and belongs to the "static storypoints".</div></span>
+
+						<%%COMBO(MC_approach)%%>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="MC_PS_style" class="control-label col-lg-3">Character problem solving style <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#MC_PS_style-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="MC_PS_style-description"><div class="alert alert-info">This is part of the Dramatica structure and belongs to the "static storypoints".</div></span>
+
+						<%%COMBO(MC_PS_style)%%>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="cw_age" class="control-label col-lg-3">Age <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#cw_age-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="cw_age-description"><div class="alert alert-info">From the "agent" table you know when the character was born and died. <br>What age will the character have within the context of your narrative?</div></span>
+
+						<input maxlength="40" type="text" class="form-control" name="cw_age" id="cw_age" value="<%%VALUE(cw_age)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="cw_gender" class="control-label col-lg-3">Gender <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#cw_gender-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="cw_gender-description"><div class="alert alert-info">The character's gender must not necessarily coincide with the real agent's gender.</div></span>
+
+						<%%COMBO(cw_gender)%%>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="cw_communication_style" class="control-label col-lg-3">Communication style <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#cw_communication_style-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="cw_communication_style-description"><div class="alert alert-info">This is part of the creative writing process. <br>Please study the "bibliography" related to the "agent" and evaluate his or her communication style.</div></span>
+
+						<textarea class="form-control" name="cw_communication_style" id="cw_communication_style" rows="5"><%%VALUE(cw_communication_style)%%></textarea>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="cw_background" class="control-label col-lg-3">Background <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#cw_background-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="cw_background-description"><div class="alert alert-info">This is part of the creative writing process. <br>Find out if there is any autobiographical or biographical writing available related to your character. <br>Otherwise you will have to invent it. Use existing autentic and primary text to get inspiration.</div></span>
+
+						<textarea class="form-control" name="cw_background" id="cw_background" rows="5"><%%VALUE(cw_background)%%></textarea>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="cw_appearance" class="control-label col-lg-3">Appearance <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#cw_appearance-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="cw_appearance-description"><div class="alert alert-info">This is part of the creative writing process. <br>How should your character look like?<br>Use the "agent's" image for orientation.</div></span>
+
+						<textarea class="form-control" name="cw_appearance" id="cw_appearance" rows="5"><%%VALUE(cw_appearance)%%></textarea>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="cw_relationships" class="control-label col-lg-3">Relationships <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#cw_relationships-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="cw_relationships-description"><div class="alert alert-info">This is part of the creative writing process.<br>In the "token" table you can check for persons mentioned by the character or who mentioned the character. <br>Chose, which of these relationships were most relevant for your narrative.</div></span>
+
+						<input maxlength="255" type="text" class="form-control" name="cw_relationships" id="cw_relationships" value="<%%VALUE(cw_relationships)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="cw_ambition" class="control-label col-lg-3">Ambition <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#cw_ambition-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="cw_ambition-description"><div class="alert alert-info">This is the character's main problem or concern.<br>Develop here the perception freely. <br>You will have to encode it further as part of the "static storypoints".</div></span>
+
+						<textarea class="form-control" name="cw_ambition" id="cw_ambition" rows="5"><%%VALUE(cw_ambition)%%></textarea>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="cw_character_defects" class="control-label col-lg-3">Defects <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#cw_character_defects-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="cw_character_defects-description"><div class="alert alert-info">This is the character's main defects, limitations or symptom.<br>Develop here the perception freely. <br>You will have to encode it further as part of the "static storypoints".</div></span>
+
+						<textarea class="form-control" name="cw_character_defects" id="cw_character_defects" rows="5"><%%VALUE(cw_character_defects)%%></textarea>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="cw_thoughts" class="control-label col-lg-3">Thoughts <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#cw_thoughts-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="cw_thoughts-description"><div class="alert alert-info">This is part of the creative writing process. <br>What kind of thinking style has your character?<br>Which could be her or his lema?<br>Get help from the "token" table and look into original citations.</div></span>
+
+						<textarea class="form-control" name="cw_thoughts" id="cw_thoughts" rows="5"><%%VALUE(cw_thoughts)%%></textarea>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="cw_relatedness" class="control-label col-lg-3">Relatedness <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#cw_relatedness-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="cw_relatedness-description"><div class="alert alert-info">This is part of the creative writing process. <br>Was the agent of your character a common person or rather a distinguished one?<br>How well does he or she get along with others in your narrative?</div></span>
+
+						<input maxlength="255" type="text" class="form-control" name="cw_relatedness" id="cw_relatedness" value="<%%VALUE(cw_relatedness)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="cw_restrictions" class="control-label col-lg-3">Restrictions <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#cw_restrictions-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="cw_restrictions-description"><div class="alert alert-info">This is part of the creative writing process.</div></span>
+
+						<textarea class="form-control" name="cw_restrictions" id="cw_restrictions" rows="5"><%%VALUE(cw_restrictions)%%></textarea>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="locations" class="control-label col-lg-3">Locations <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#locations-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="locations-description"><div class="alert alert-info">Use the "token" table to check for locations the character appeared in real life.<br>Chose those that most suit you for your narrative.</div></span>
+
+						<input maxlength="255" type="text" class="form-control" name="locations" id="locations" value="<%%VALUE(locations)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="persons" class="control-label col-lg-3">Related persons <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#persons-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="persons-description"><div class="alert alert-info">Use the "token" table to check for persons the character related to in real life.<br>Chose those that most suit you for your narrative.<br>You will further encode their relationships and conflict in the "encounters" worksheet.</div></span>
+
+						<input maxlength="255" type="text" class="form-control" name="persons" id="persons" value="<%%VALUE(persons)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="events" class="control-label col-lg-3">Events <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#events-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="events-description"><div class="alert alert-info">Use the "code" table to check for events which had most impact in the agent's real life.<br>Chose those that most suit you for your character.<br>You will further encode their relationships and conflict in the "encounters" worksheet.</div></span>
+
+						<textarea class="form-control" name="events" id="events" rows="5"><%%VALUE(events)%%></textarea>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="noetictension" class="control-label col-lg-3">Main tragic triad <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#noetictension-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="noetictension-description"><div class="alert alert-info">Use the "code" table to check for persons main concern related to the tragic triad.<br>You will further encode their relationships and conflict in the "encounters" worksheet.</div></span>
+
+						<div class="row"><div class="col-xs-10"><%%COMBO(noetictension)%%></div><div class="col-xs-1"><%%PLINK(noetictension)%%></div></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="impression" class="control-label col-lg-3">General impression management <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#impression-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="impression-description"><div class="alert alert-info">Use the "token" table to check for the impression management techniques used by the person in real life.<br>Resume those that appeared most often, or in the most relevant moments for your narrative.<br>This is part of the character's communication style, which you will have to take into consideration when creating dialogues.</div></span>
+
+						<div class="row"><div class="col-xs-10"><%%COMBO(impression)%%></div><div class="col-xs-1"><%%PLINK(impression)%%></div></div>
+					</div>
+				</div>
+
+			</fieldset>
+		</div>
+
+		<!-- DV action buttons -->
+		<div class="col-md-4 col-lg-2" id="story_characters_dv_action_buttons">
+			<div class="btn-toolbar">
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%UPDATE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%DESELECT_BUTTON%%>
+					<%%DVPRINT_BUTTON%%>
+					<%%DELETE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%INSERT_BUTTON%%>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- child records -->
+	<hr>
+	<div class="row">
+		<div class="col-lg-10 col-lg-offset-1">
+			<div id="story_characters-children" class="children-tabs"></div>
+		</div>
+	</div>
+
+</div><!-- /div class="panel-body" -->
+	<script>
+		$j(function() {
+			var add_new_mode = (!$j('input[name=SelectedID]').val());
+			var embedded_mode = ($j('input[name=Embedded]').val() == 1);
+
+			$j('select, input[type=text], textarea').not(':disabled').eq(0).focus();
+			$j('form').eq(0).change(function(){
+				if($j(this).data('already_changed')) return;
+				if($j('#deselect').length) $j('#deselect').removeClass('btn-default').addClass('btn-warning').get(0).lastChild.data = " <%%TRANSLATION(Cancel)%%>";
+				$j(this).data('already_changed', true);
+			});
+
+			$j('a[href="<%%TRANSLATION(ImageFolder)%%>"]').click(function(){ return false; });
+
+			if(embedded_mode){
+				/* hide links to children tables in embedded mode */
+				$j('.detail_view a[id$=_link]').remove();
+
+				/* append embedded mode to all links */
+				var append_embedded = function(){
+					$j('a[href]:not([href^=#]):not([href^=javascript]):not([href$="Embedded=1"])').each(
+						function(){
+							$j(this).attr('href', $j(this).attr('href') + '&Embedded=1');
+						}
+					);
+				}
+				setTimeout(append_embedded, 500);
+				setTimeout(append_embedded, 1500);
+				setTimeout(append_embedded, 2500);
+				setTimeout(append_embedded, 3500);
+			}
+
+			/* when no record is selected ('add new' mode) */
+			if(add_new_mode){
+				/* hide links to children tables */
+				$j('.detail_view a[id$=_link]').remove();
+			}else{
+				post(
+					'parent-children.php', {
+						ParentTable: 'story_characters',
+						SelectedID: '<%%VALUE(id)%%>',
+						Operation: 'show-children'
+					},
+					'story_characters-children'
+				);
+			}
+		});
+	</script>

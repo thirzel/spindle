@@ -1,0 +1,249 @@
+<!-- Edit this file to change the layout of the detail view form -->
+
+<a name="detail-view"></a>
+<div class="panel-heading"><h3 class="panel-title"><strong><%%DETAIL_VIEW_TITLE%%></strong></h3></div>
+
+<div class="panel-body" id="storydynamic_dv_container">
+	<!-- child links -->
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<hr>
+
+	<div class="row">
+		<!-- form inputs -->
+		<div class="col-md-8 col-lg-10" id="storydynamic_dv_form">
+			<fieldset class="form-horizontal">
+
+				<div class="form-group">
+					<label for="id" class="control-label col-lg-3">id <button class="btn btn-info btn-xs vspacer-sm" type="button" data-toggle="collapse" tabindex="-1" data-target="#id-description"><i class="glyphicon glyphicon-info-sign"></i></button></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="id-description"><div class="alert alert-info">This table referes to the dynamic storypoints definded by Dramatica theory.<br>Chose the free Dramatica worksheets or the commercial Dramatica Pro software to encode them.<br><br>You should have 1 entrance per story.</div></span>
+
+						<p class="form-control-static" id="id"><%%VALUE(id)%%></p>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="story" class="control-label col-lg-3">Story</label>
+					<div class="col-lg-9">
+						<div class="row"><div class="col-xs-10"><%%COMBO(story)%%></div><div class="col-xs-1"><%%PLINK(story)%%></div></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="MC_resolve" class="control-label col-lg-3">MC resolve</label>
+					<div class="col-lg-9">
+						<%%COMBO(MC_resolve)%%>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="MC_growth" class="control-label col-lg-3">MC growth</label>
+					<div class="col-lg-9">
+						<%%COMBO(MC_growth)%%>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="MC_approach" class="control-label col-lg-3">MC approach</label>
+					<div class="col-lg-9">
+						<%%COMBO(MC_approach)%%>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="MC_PS_style" class="control-label col-lg-3">MC PS style</label>
+					<div class="col-lg-9">
+						<%%COMBO(MC_PS_style)%%>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="IC_resolve" class="control-label col-lg-3">IC resolve</label>
+					<div class="col-lg-9">
+						<%%COMBO(IC_resolve)%%>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="OS_driver" class="control-label col-lg-3">Overall driver</label>
+					<div class="col-lg-9">
+						<%%COMBO(OS_driver)%%>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="OS_limit" class="control-label col-lg-3">Overal limit</label>
+					<div class="col-lg-9">
+						<%%COMBO(OS_limit)%%>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="OS_outcome" class="control-label col-lg-3">Overall outcome</label>
+					<div class="col-lg-9">
+						<%%COMBO(OS_outcome)%%>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="OS_judgement" class="control-label col-lg-3">Overall judgement</label>
+					<div class="col-lg-9">
+						<%%COMBO(OS_judgement)%%>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="OS_goal_domain" class="control-label col-lg-3">Overall goal</label>
+					<div class="col-lg-9">
+						<div class="row"><div class="col-xs-10"><%%COMBO(OS_goal_domain)%%></div><div class="col-xs-1"><%%PLINK(OS_goal_domain)%%></div></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="OS_goal_concern" class="control-label col-lg-3">Goal concern</label>
+					<div class="col-lg-9">
+						<div class="row"><div class="col-xs-10"><%%COMBO(OS_goal_concern)%%></div><div class="col-xs-1"><%%PLINK(OS_goal_concern)%%></div></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="OS_consequence_domain" class="control-label col-lg-3">Overall consequence</label>
+					<div class="col-lg-9">
+						<div class="row"><div class="col-xs-10"><%%COMBO(OS_consequence_domain)%%></div><div class="col-xs-1"><%%PLINK(OS_consequence_domain)%%></div></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="OS_consequence_concern" class="control-label col-lg-3">Consequence concern</label>
+					<div class="col-lg-9">
+						<div class="row"><div class="col-xs-10"><%%COMBO(OS_consequence_concern)%%></div><div class="col-xs-1"><%%PLINK(OS_consequence_concern)%%></div></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="OS_cost_domain" class="control-label col-lg-3">Overall cost</label>
+					<div class="col-lg-9">
+						<div class="row"><div class="col-xs-10"><%%COMBO(OS_cost_domain)%%></div><div class="col-xs-1"><%%PLINK(OS_cost_domain)%%></div></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="OS_cost_concern" class="control-label col-lg-3">Cost concern</label>
+					<div class="col-lg-9">
+						<div class="row"><div class="col-xs-10"><%%COMBO(OS_cost_concern)%%></div><div class="col-xs-1"><%%PLINK(OS_cost_concern)%%></div></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="OS_dividend_domain" class="control-label col-lg-3">Overall dividend</label>
+					<div class="col-lg-9">
+						<div class="row"><div class="col-xs-10"><%%COMBO(OS_dividend_domain)%%></div><div class="col-xs-1"><%%PLINK(OS_dividend_domain)%%></div></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="OS_dividend_concern" class="control-label col-lg-3">Dividend concern</label>
+					<div class="col-lg-9">
+						<div class="row"><div class="col-xs-10"><%%COMBO(OS_dividend_concern)%%></div><div class="col-xs-1"><%%PLINK(OS_dividend_concern)%%></div></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="OS_requirements_domain" class="control-label col-lg-3">Overall requirements</label>
+					<div class="col-lg-9">
+						<div class="row"><div class="col-xs-10"><%%COMBO(OS_requirements_domain)%%></div><div class="col-xs-1"><%%PLINK(OS_requirements_domain)%%></div></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="OS_requirements_concern" class="control-label col-lg-3">Requirements concern</label>
+					<div class="col-lg-9">
+						<div class="row"><div class="col-xs-10"><%%COMBO(OS_requirements_concern)%%></div><div class="col-xs-1"><%%PLINK(OS_requirements_concern)%%></div></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="OS_prerequesites_domain" class="control-label col-lg-3">Overall prerequesites</label>
+					<div class="col-lg-9">
+						<div class="row"><div class="col-xs-10"><%%COMBO(OS_prerequesites_domain)%%></div><div class="col-xs-1"><%%PLINK(OS_prerequesites_domain)%%></div></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="OS_prerequesites_concern" class="control-label col-lg-3">Prerequesites concern</label>
+					<div class="col-lg-9">
+						<div class="row"><div class="col-xs-10"><%%COMBO(OS_prerequesites_concern)%%></div><div class="col-xs-1"><%%PLINK(OS_prerequesites_concern)%%></div></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="OS_preconditions_domain" class="control-label col-lg-3">Overall preconditions</label>
+					<div class="col-lg-9">
+						<div class="row"><div class="col-xs-10"><%%COMBO(OS_preconditions_domain)%%></div><div class="col-xs-1"><%%PLINK(OS_preconditions_domain)%%></div></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="OS_preconditions_concern" class="control-label col-lg-3">Preconditions concern</label>
+					<div class="col-lg-9">
+						<div class="row"><div class="col-xs-10"><%%COMBO(OS_preconditions_concern)%%></div><div class="col-xs-1"><%%PLINK(OS_preconditions_concern)%%></div></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="OS_forewarnings_domain" class="control-label col-lg-3">Overall forewarnings</label>
+					<div class="col-lg-9">
+						<div class="row"><div class="col-xs-10"><%%COMBO(OS_forewarnings_domain)%%></div><div class="col-xs-1"><%%PLINK(OS_forewarnings_domain)%%></div></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="OS_forewarnings_concern" class="control-label col-lg-3">Forewarnings concern</label>
+					<div class="col-lg-9">
+						<div class="row"><div class="col-xs-10"><%%COMBO(OS_forewarnings_concern)%%></div><div class="col-xs-1"><%%PLINK(OS_forewarnings_concern)%%></div></div>
+					</div>
+				</div>
+
+			</fieldset>
+		</div>
+
+		<!-- DV action buttons -->
+		<div class="col-md-4 col-lg-2" id="storydynamic_dv_action_buttons">
+			<div class="btn-toolbar">
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%UPDATE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%DESELECT_BUTTON%%>
+					<%%DVPRINT_BUTTON%%>
+					<%%DELETE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%INSERT_BUTTON%%>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</div><!-- /div class="panel-body" -->
+	<script>
+		$j(function() {
+			var add_new_mode = (!$j('input[name=SelectedID]').val());
+			var embedded_mode = ($j('input[name=Embedded]').val() == 1);
+
+			$j('select, input[type=text], textarea').not(':disabled').eq(0).focus();
+			$j('form').eq(0).change(function(){
+				if($j(this).data('already_changed')) return;
+				if($j('#deselect').length) $j('#deselect').removeClass('btn-default').addClass('btn-warning').get(0).lastChild.data = " <%%TRANSLATION(Cancel)%%>";
+				$j(this).data('already_changed', true);
+			});
+
+			$j('a[href="<%%TRANSLATION(ImageFolder)%%>"]').click(function(){ return false; });
+
+		});
+	</script>

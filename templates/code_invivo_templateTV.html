@@ -1,0 +1,19 @@
+<!-- Edit this file to change the layout of each record in the table view -->
+<!-- To disable clicking of a field, remove the <%%select%%> and <%%endselect%%> formatters around it-->
+
+<!-- If you wish to hide the table view header that contains the column titles, -->
+<!-- open the generated 'code_invivo_view.php' file in your text editor and -->
+<!-- change the value of $x->ShowTableHeader to 0 -->
+
+		<td id="code_invivo-id-<%%VALUE(id)%%>" class="code_invivo-id text-right"><%%SELECT%%><%%VALUE(id)%%><%%ENDSELECT%%></td>
+		<td id="code_invivo-author-<%%VALUE(id)%%>" class="code_invivo-author "><%%SELECT%%><%%VALUE(author)%%><%%ENDSELECT%%></td>
+		<td id="code_invivo-bibliography-<%%VALUE(id)%%>" class="code_invivo-bibliography text-right"><%%SELECT%%><%%VALUE(bibliography)%%><%%ENDSELECT%%></td>
+		<td id="code_invivo-transcript-<%%VALUE(id)%%>" class="code_invivo-transcript "><%%SELECT%%><%%VALUE(transcript)%%><%%ENDSELECT%%></td>
+		<td id="code_invivo-token_sequence-<%%VALUE(id)%%>" class="code_invivo-token_sequence text-right"><%%SELECT%%><%%VALUE(token_sequence)%%><%%ENDSELECT%%></td>
+		<td id="code_invivo-token-<%%VALUE(id)%%>" class="code_invivo-token "><%%SELECT%%><%%VALUE(token)%%><%%ENDSELECT%%></td>
+		<td id="code_invivo-invivo-<%%VALUE(id)%%>" class="code_invivo-invivo "><%%SELECT%%><%%VALUE(invivo)%%><%%ENDSELECT%%></td>
+		<td id="code_invivo-start_date-<%%VALUE(id)%%>" class="code_invivo-start_date "><%%SELECT%%><%%VALUE(start_date)%%><%%ENDSELECT%%></td>
+		<td id="code_invivo-end_date-<%%VALUE(id)%%>" class="code_invivo-end_date "><%%SELECT%%><%%VALUE(end_date)%%><%%ENDSELECT%%></td>
+		<td id="code_invivo-person-<%%VALUE(id)%%>" class="code_invivo-person "><%%SELECT%%><%%VALUE(person)%%><%%ENDSELECT%%></td>
+		<td id="code_invivo-place-<%%VALUE(id)%%>" class="code_invivo-place "><%%SELECT%%><%%VALUE(place)%%><%%ENDSELECT%%></td>
+		<td id="code_invivo-freecode-<%%VALUE(id)%%>" class="code_invivo-freecode "><%%SELECT%%><%%VALUE(freecode)%%><%%ENDSELECT%%></td>

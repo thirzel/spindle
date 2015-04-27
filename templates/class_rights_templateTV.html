@@ -1,0 +1,11 @@
+<!-- Edit this file to change the layout of each record in the table view -->
+<!-- To disable clicking of a field, remove the <%%select%%> and <%%endselect%%> formatters around it-->
+
+<!-- If you wish to hide the table view header that contains the column titles, -->
+<!-- open the generated 'class_rights_view.php' file in your text editor and -->
+<!-- change the value of $x->ShowTableHeader to 0 -->
+
+		<td id="class_rights-right-<%%VALUE(id)%%>" class="class_rights-right "><%%SELECT%%><%%VALUE(right)%%><%%ENDSELECT%%></td>
+		<td id="class_rights-description-<%%VALUE(id)%%>" class="class_rights-description "><%%SELECT%%><%%VALUE(description)%%><%%ENDSELECT%%></td>
+		<td id="class_rights-certification-<%%VALUE(id)%%>" class="class_rights-certification "><a href="link.php?t=class_rights&f=certification&i=<%%VALUE(id)%%>" target="_blank" title="<%%VALUE(certification)%%>" class="btn btn-default"><i class="glyphicon glyphicon-globe text-info"></i></a></td>
+		<script>jQuery(function(){ var e_certification='<%%VALUE(certification)%%>'; if(e_certification=='' || e_certification=='&nbsp;') jQuery('#class_rights-certification-<%%VALUE(id)%%>').html(''); });</script>

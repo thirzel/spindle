@@ -1,0 +1,15 @@
+<!-- Edit this file to change the layout of each record in the table view -->
+<!-- To disable clicking of a field, remove the <%%select%%> and <%%endselect%%> formatters around it-->
+
+<!-- If you wish to hide the table view header that contains the column titles, -->
+<!-- open the generated 'story_characters_view.php' file in your text editor and -->
+<!-- change the value of $x->ShowTableHeader to 0 -->
+
+		<td id="story_characters-id-<%%VALUE(id)%%>" class="story_characters-id text-right"><%%SELECT%%><%%VALUE(id)%%><%%ENDSELECT%%></td>
+		<td id="story_characters-story-<%%VALUE(id)%%>" class="story_characters-story text-right"><%%SELECT%%><%%VALUE(story)%%><%%ENDSELECT%%></td>
+		<td id="story_characters-role-<%%VALUE(id)%%>" class="story_characters-role text-right"><%%SELECT%%><%%VALUE(role)%%><%%ENDSELECT%%></td>
+		<td id="story_characters-character-<%%VALUE(id)%%>" class="story_characters-character "><%%SELECT%%><%%VALUE(character)%%><%%ENDSELECT%%></td>
+		<td id="story_characters-memberID-<%%VALUE(id)%%>" class="story_characters-memberID text-right"><%%SELECT%%><%%VALUE(memberID)%%><%%ENDSELECT%%></td>
+		<td id="story_characters-agent_name-<%%VALUE(id)%%>" class="story_characters-agent_name "><%%SELECT%%><%%VALUE(agent_name)%%><%%ENDSELECT%%></td>
+		<td id="story_characters-cw_name-<%%VALUE(id)%%>" class="story_characters-cw_name "><%%SELECT%%><%%VALUE(cw_name)%%><%%ENDSELECT%%></td>
+		<td id="story_characters-img-<%%VALUE(id)%%>" class="story_characters-img text-right"><a href="<%%TRANSLATION(ImageFolder)%%><%%VALUE(img)%%>" rel="lightbox"><img src="thumbnail.php?i=<%%VALUE(img)%%>&t=biblio_author&f=img&v=tv" class="img-thumbnail"></a></td>

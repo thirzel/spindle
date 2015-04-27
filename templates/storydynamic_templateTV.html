@@ -1,0 +1,14 @@
+<!-- Edit this file to change the layout of each record in the table view -->
+<!-- To disable clicking of a field, remove the <%%select%%> and <%%endselect%%> formatters around it-->
+
+<!-- If you wish to hide the table view header that contains the column titles, -->
+<!-- open the generated 'storydynamic_view.php' file in your text editor and -->
+<!-- change the value of $x->ShowTableHeader to 0 -->
+
+		<td id="storydynamic-id-<%%VALUE(id)%%>" class="storydynamic-id text-right"><%%SELECT%%><%%VALUE(id)%%><%%ENDSELECT%%></td>
+		<td id="storydynamic-story-<%%VALUE(id)%%>" class="storydynamic-story text-right"><%%SELECT%%><%%VALUE(story)%%><%%ENDSELECT%%></td>
+		<td id="storydynamic-MC_resolve-<%%VALUE(id)%%>" class="storydynamic-MC_resolve "><%%SELECT%%><%%VALUE(MC_resolve)%%><%%ENDSELECT%%></td>
+		<td id="storydynamic-MC_growth-<%%VALUE(id)%%>" class="storydynamic-MC_growth "><%%SELECT%%><%%VALUE(MC_growth)%%><%%ENDSELECT%%></td>
+		<td id="storydynamic-MC_approach-<%%VALUE(id)%%>" class="storydynamic-MC_approach "><%%SELECT%%><%%VALUE(MC_approach)%%><%%ENDSELECT%%></td>
+		<td id="storydynamic-MC_PS_style-<%%VALUE(id)%%>" class="storydynamic-MC_PS_style "><%%SELECT%%><%%VALUE(MC_PS_style)%%><%%ENDSELECT%%></td>
+		<td id="storydynamic-IC_resolve-<%%VALUE(id)%%>" class="storydynamic-IC_resolve "><%%SELECT%%><%%VALUE(IC_resolve)%%><%%ENDSELECT%%></td>
